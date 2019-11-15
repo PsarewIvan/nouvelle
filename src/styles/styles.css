@@ -21,6 +21,8 @@
 @import 'blocks/article.css';
 @import 'blocks/authors.css';
 @import 'blocks/blob.css';
+@import 'blocks/related-articles.css';
+@import 'blocks/related-article.css';
 
 /* Globals */
 
