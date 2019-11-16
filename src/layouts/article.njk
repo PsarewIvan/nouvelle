@@ -78,6 +78,8 @@ layout: page.njk
     <div class="main__related-articles related-articles">
         <h2 class="related-articles__title">По теме</h2>
         <ul class="related-articles__list">
+            {% set blobColor %}{{ ['teal', 'lightteal', 'moss', 'grass'] | random }}{% endset %}
+            {% set blobShape %}{{ [1, 2, 3, 4, 5, 6, 7] | random }}{% endset %}
             <li class="related-articles__item">
                 <article class="related-articles__article article-card">
                     <h3 class="article-card__title">
@@ -91,8 +93,11 @@ layout: page.njk
                     <a class="article-card__author" href="#">
                         Андрей Ситник
                     </a>
-                    <img class="article-card__picture"
-                        src="/images/author--placeholder.png"
+                    <img class="
+                            article-card__picture
+                            blob--{{ blobColor }}
+                            blob--shape-{{ blobShape }}"
+                        src="/images/author--placeholder.jpg"
                         width="80" height="74" alt="Андрей Ситник">
                 </article>
             </li>
@@ -109,8 +114,11 @@ layout: page.njk
                     <a class="article-card__author" href="#">
                         Девид Нил
                     </a>
-                    <img class="article-card__picture"
-                        src="/images/author--placeholder.png"
+                    <img class="
+                            article-card__picture
+                            blob--{{ blobColor }}
+                            blob--shape-{{ blobShape }}"
+                        src="/images/author--placeholder.jpg"
                         width="80" height="74" alt="Девид Нил">
                 </article>
             </li>
@@ -127,8 +135,11 @@ layout: page.njk
                     <a class="article-card__author" href="#">
                         Иван Петров
                     </a>
-                    <img class="article-card__picture"
-                        src="/images/author--placeholder.png"
+                    <img class="
+                            article-card__picture
+                            blob--{{ blobColor }}
+                            blob--shape-{{ blobShape }}"
+                        src="/images/author--placeholder.jpg"
                         width="80" height="74" alt="Иван Петров">
                 </article>
             </li>
