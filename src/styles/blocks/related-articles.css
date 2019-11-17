@@ -9,13 +9,31 @@
 
 .related-articles__list {
     padding: 0;
+    margin: 0;
     list-style: none;
 }
 
-.related-articles__article {
+.related-articles__item {
     border-top: 1px solid var(--color-grey-medium);
 }
 
-.related-articles__article:last-of-type {
+.related-articles__item:last-of-type {
     border-bottom: 1px solid var(--color-grey-medium);
+}
+
+@media (min-width: 700px) {
+    .related-articles__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .related-articles__item {
+        border: 1px solid var(--color-grey-medium);
+    }
+
+    /* Опасное свойство, т.к. при уменьшении/увеличении колонок могут появится проблемы */
+
+    .related-articles__item:not(:last-of-type) {
+        border-right: none;
+    }
 }
