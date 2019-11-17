@@ -16,8 +16,12 @@ tags:
   - js
 ---
 
-![](images/1.jpg)
-_Ай промис, фото [Бена Уайта](https://unsplash.com/photos/tX4-tYibILg)._
+<figure>
+    <img src="images/1.jpg" alt="">
+    <figcaption>
+        Ай промис, фото <a href="https://unsplash.com/photos/tX4-tYibILg">Бена Уайта</a>.
+    </figcaption>
+</figure>
 
 ## Промисы простыми словами
 
@@ -42,11 +46,13 @@ _Ай промис, фото [Бена Уайта](https://unsplash.com/photos/t
 
 Что, по вашему мнению, выведется в консоль в следующем примере?
 
-    console.log('1');
-    setTimeout(function(){ console.log('2'); }, 3000);
+```js
+console.log('1');
+setTimeout(function(){ console.log('2'); }, 3000);
 
-    console.log('3');
-    setTimeout(function(){ console.log('4'); }, 1000);
+console.log('3');
+setTimeout(function(){ console.log('4'); }, 1000);
+```
 
 Результатом будет 1 3 4 2. Вы можете задаться вопросом, почему 4 встречается раньше чем 2. Причина в том, что, несмотря на то, что строка с 2 описана раньше, она начала выполняться только после 3000 мс, поэтому 4 выводится до 2.
 
@@ -54,24 +60,28 @@ _Ай промис, фото [Бена Уайта](https://unsplash.com/photos/t
 
 Теперь рассмотрим, как создать промис в JavaScript:
 
-    var promise = new Promise(function(resolve, reject) {
-        // Делаем, что-то, возможно асинхронное, тогда…
+```js
+var promise = new Promise(function(resolve, reject) {
+    // Делаем, что-то, возможно асинхронное, тогда…
 
-        if (/* Всё прошло отлично */) {
-            resolve('Сработало!');
-        }
-        else {
-            reject(Error('Сломалось'));
-        }
-    });
+    if (/* Всё прошло отлично */) {
+        resolve('Сработало!');
+    }
+    else {
+        reject(Error('Сломалось'));
+    }
+});
+```
 
 Конструктор `Promise` принимает один аргумент: колбэк с двумя параметрами — `resolve` и `reject`. Этот промис может быть использован следующим образом:
 
-    promise.then(function(result) {
-        console.log('Промис сработал');
-    }, function(err) {
-        console.log('Что-то сломалось');
-    });
+```js
+promise.then(function(result) {
+    console.log('Промис сработал');
+}, function(err) {
+    console.log('Что-то сломалось');
+});
+```
 
 Если промис прошёл успешно, будет выполнен `resolve`, и консоль выведет Промис сработал, в противном случае выведется Что-то сломалось. Это состояние до получения `resolve` или `reject` называется состоянием ожидания, `pending`. Таким образом, есть три состояния промиса:
 
@@ -79,8 +89,12 @@ _Ай промис, фото [Бена Уайта](https://unsplash.com/photos/t
 2. Успешное выполнение: `resolve`.
 3. Выход ошибкой: `reject`.
 
-![](images/2.jpg)
-_Промис успешно выполнился, [фото Скотта Вебба](https://www.pexels.com/photo/man-couple-love-people-136402/)._
+<figure>
+    <img src="images/2.jpg" alt="">
+    <figcaption>
+        Промис успешно выполнился, <a href="https://www.pexels.com/photo/man-couple-love-people-136402/">фото Скотта Вебба</a>.
+    </figcaption>
+</figure>
 
 ## Пример
 
@@ -88,8 +102,9 @@ _Промис успешно выполнился, [фото Скотта Веб
 
 Сначала создадим промис с `XMLHttpRequest`:
 
-    const loadImage = url => {
-      return new Promise(function(resolve, reject) {
+```js
+const loadImage = url => {
+    return new Promise(function(resolve, reject) {
         // Открываем новый XHR
         var request = new XMLHttpRequest();
         request.open('GET', url);
@@ -97,34 +112,37 @@ _Промис успешно выполнился, [фото Скотта Веб
         // После загрузки запроса
         // проверяем, был ли он успешным
         request.onload = function() {
-          if (request.status === 200) {
-            // Если успешный, то резолвим промис
-            resolve(request.response);
-          } else {
-            // Если нет, то реджектим промис
-            reject(Error(
-              'Произошла ошибка. Код ошибки:' + request.statusText
-            ));
-          }
+            if (request.status === 200) {
+                // Если успешный, то резолвим промис
+                resolve(request.response);
+            } else {
+                // Если нет, то реджектим промис
+                reject(Error(
+                    'Произошла ошибка. Код ошибки:' + request.statusText
+                ));
+            }
         };
 
         request.send();
-      });
-    };
+    });
+};
+```
 
 Теперь, когда изображение успешно загружено, промис вернет `resolve` с ответом от XHR. Давайте используем этот промис, вызвав функцию `loadImage`.
 
-    const embedImage = url => {
-      loadImage(url).then(function(result) {
-          const img = new Image();
-          var imageURL = window.URL.createObjectURL(result);
-          img.src = imageURL;
-          document.querySelector('body').appendChild(img);
-        },
-        function(err) {
-          console.log(err);
-        });
-    }
+```js
+const embedImage = url => {
+    loadImage(url).then(function(result) {
+        const img = new Image();
+        var imageURL = window.URL.createObjectURL(result);
+        img.src = imageURL;
+        document.querySelector('body').appendChild(img);
+    },
+    function(err) {
+        console.log(err);
+    });
+}
+```
 
 Мы сделали это! Неплохо, да?
 
