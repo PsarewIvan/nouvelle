@@ -48,6 +48,11 @@
     text-transform: uppercase;
 }
 
+.article-card__link:hover,
+.article-card__author:hover {
+    text-decoration: underline;
+}
+
 @media (min-width: 900px) {
     .article-card--related {
         grid-template-rows: 1fr repeat(5, min-content);
