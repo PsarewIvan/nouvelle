@@ -22,7 +22,7 @@
 @import 'blocks/authors.css';
 @import 'blocks/blob.css';
 @import 'blocks/related-articles.css';
-@import 'blocks/related-article.css';
+@import 'blocks/article-card.css';
 
 /* Globals */
 
