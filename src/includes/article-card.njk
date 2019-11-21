@@ -1,19 +1,28 @@
 <article class="article-card {{ articleClass }}">
     <h3 class="article-card__title">
-        <a class="article-card__link" href="#">
-            Советы по доступности интерактивных элементов на мобильных устройствах
+        <a class="article-card__link" href="{{ article.url }}">
+            {{ article.data.title }}
         </a>
     </h3>
-    <time class="article-card__date" datetime="2019-02-04">
-        4 февраля
+
+    <time class="article-card__date" datetime="{{ article.date | isoDate }}">
+        {{ article.date | ruDate }}
     </time>
-    <a class="article-card__author" href="#">
-        Андрей Ситник
-    </a>
-    <img class="
-            article-card__picture
-            blob--{{ blobColor }}
-            blob--shape-{{ blobShape }}"
-        src="/images/author--placeholder.jpg"
-        width="80" height="74" alt="Андрей Ситник">
+
+    {% set blobColor %}{{ ['teal', 'lightteal', 'moss', 'grass'] | random }}{% endset %}
+    {% set blobShape %}{{ [1, 2, 3, 4, 5, 6, 7] | random }}{% endset %}
+
+    {% for author in collections.people | filterPeople(article.data.author) %}
+        <a class="article-card__author" href="#">
+            {{ author.name }}
+        </a>
+
+        <img class="
+                article-card__picture
+                blob--{{ blobColor }}
+                blob--shape-{{ blobShape }}"
+            src="/images/author--placeholder.jpg"
+            width="80" height="74"
+            alt="{{ author.name }}">
+    {% endfor %}
 </article>

@@ -78,20 +78,13 @@ layout: page.njk
     <div class="main__related-articles related-articles">
         <h2 class="related-articles__title">По теме</h2>
         <ul class="related-articles__list">
-            {% set blobColor %}{{ ['teal', 'lightteal', 'moss', 'grass'] | random }}{% endset %}
-            {% set blobShape %}{{ [1, 2, 3, 4, 5, 6, 7] | random }}{% endset %}
             {% set articleClass %}{{ 'related-articles__article article-card--related' }}{% endset %}
-
             {# Необходима реализация показа статей "По теме" #}
-            <li class="related-articles__item">
-                {% include 'article-card.njk' %}
-            </li>
-            <li class="related-articles__item">
-                {% include 'article-card.njk' %}
-            </li>
-            <li class="related-articles__item">
-                {% include 'article-card.njk' %}
-            </li>
+            {%- for article in collections.article | reverse -%}
+                <li class="related-articles__item">
+                    {% include 'article-card.njk' %}
+                </li>
+            {%- endfor -%}
         </ul>
     </div>
 </main>
