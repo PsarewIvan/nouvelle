@@ -80,68 +80,17 @@ layout: page.njk
         <ul class="related-articles__list">
             {% set blobColor %}{{ ['teal', 'lightteal', 'moss', 'grass'] | random }}{% endset %}
             {% set blobShape %}{{ [1, 2, 3, 4, 5, 6, 7] | random }}{% endset %}
+            {% set articleClass %}{{ 'related-articles__article article-card--related' }}{% endset %}
+
+            {# Необходима реализация показа статей "По теме" #}
             <li class="related-articles__item">
-                <article class="related-articles__article article-card article-card--related">
-                    <h3 class="article-card__title">
-                        <a class="article-card__link" href="#">
-                            Советы по доступности интерактивных элементов на мобильных устройствах
-                        </a>
-                    </h3>
-                    <time class="article-card__date" datetime="2019-02-04">
-                        4 февраля
-                    </time>
-                    <a class="article-card__author" href="#">
-                        Андрей Ситник
-                    </a>
-                    <img class="
-                            article-card__picture
-                            blob--{{ blobColor }}
-                            blob--shape-{{ blobShape }}"
-                        src="/images/author--placeholder.jpg"
-                        width="80" height="74" alt="Андрей Ситник">
-                </article>
+                {% include 'article-card.njk' %}
             </li>
             <li class="related-articles__item">
-                <article class="related-articles__article article-card article-card--related">
-                    <h3 class="article-card__title">
-                        <a class="article-card__link" href="#">
-                            Что нового в JavaScript 2019
-                        </a>
-                    </h3>
-                    <time class="article-card__date" datetime="2019-02-04">
-                        4 февраля
-                    </time>
-                    <a class="article-card__author" href="#">
-                        Девид Нил
-                    </a>
-                    <img class="
-                            article-card__picture
-                            blob--{{ blobColor }}
-                            blob--shape-{{ blobShape }}"
-                        src="/images/author--placeholder.jpg"
-                        width="80" height="74" alt="Девид Нил">
-                </article>
+                {% include 'article-card.njk' %}
             </li>
             <li class="related-articles__item">
-                <article class="related-articles__article article-card article-card--related">
-                    <h3 class="article-card__title">
-                        <a class="article-card__link" href="#">
-                            Доступные SVG-иконки с инлайновыми спрайтами
-                        </a>
-                    </h3>
-                    <time class="article-card__date" datetime="2019-02-04">
-                        4 февраля
-                    </time>
-                    <a class="article-card__author" href="#">
-                        Иван Петров
-                    </a>
-                    <img class="
-                            article-card__picture
-                            blob--{{ blobColor }}
-                            blob--shape-{{ blobShape }}"
-                        src="/images/author--placeholder.jpg"
-                        width="80" height="74" alt="Иван Петров">
-                </article>
+                {% include 'article-card.njk' %}
             </li>
         </ul>
     </div>
