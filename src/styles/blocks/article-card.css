@@ -76,17 +76,19 @@
     }
 }
 
+/* Main */
+
 @media (min-width: 1024px) {
-    .article-card__title--articles {
+    .article-card__title--main {
         font-size: 32px;
     }
 
-    .article-card__date,
-    .article-card__author {
+    .article-card__date--main,
+    .article-card__author--main {
         font-size: 16px;
     }
 
-    .article-card__picture {
+    .article-card__picture--main {
         width: 112px;
     }
 }
@@ -104,6 +106,21 @@
 
     .article-card__picture--articles {
         align-self: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-card__title--articles {
+        font-size: 32px;
+    }
+
+    .article-card__date--articles,
+    .article-card__author--articles {
+        font-size: 16px;
+    }
+
+    .article-card__picture--articles {
+        width: 112px;
     }
 }
 
