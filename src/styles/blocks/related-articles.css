@@ -32,7 +32,7 @@
         padding: 16px 32px 32px 24px;
         margin-left: 1px;
         margin-top: 1px;
-        box-shadow: 0 0 0 1px var(--color-grey-medium);
+        box-shadow: 0 0 0 1px var(--color-grey-lighter);
         border: none;
     }
 
