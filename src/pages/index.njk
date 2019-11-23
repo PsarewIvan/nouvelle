@@ -9,10 +9,11 @@ permalink: index.html
 <main class="main">
     {{ content | safe }}
 
-    <ul class="articles articles--main">
-        {% set articleClass %}{{ '--main' }}{% endset %}
+    {% set articleClass %}{{ '--main' }}{% endset %}
+
+    <ul class="articles articles{{ articleClass }}">
         {%- for article in collections.article | reverse -%}
-            <li class="articles__item articles__item--main">
+            <li class="articles__item articles__item{{ articleClass }}">
                 {% include 'article-card.njk' %}
             </li>
         {%- endfor -%}
