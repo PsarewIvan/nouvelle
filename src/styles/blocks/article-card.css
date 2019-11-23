@@ -54,6 +54,40 @@
     text-decoration: underline;
 }
 
+/* Main */
+
+@media (min-width: 800px) {
+    .article-card--main {
+        grid-template-rows: 1fr repeat(5, min-content);
+        grid-template-columns: 1fr min-content;
+        grid-template-areas:
+            'title title'
+            '. picture'
+            '. picture'
+            '. picture'
+            'date picture'
+            'author picture';
+        grid-gap: 0;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-card__title--main {
+        min-height: 4em;
+        font-size: 32px;
+    }
+
+    .article-card__date--main,
+    .article-card__author--main {
+        font-size: 16px;
+    }
+
+    .article-card__picture--main {
+        width: 112px;
+    }
+}
+
 /* Articles */
 
 @media (min-width: 800px) {
