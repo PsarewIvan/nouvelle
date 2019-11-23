@@ -7,40 +7,6 @@
     letter-spacing: 0.08em;
 }
 
-.related-articles__list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.related-articles__item {
-    padding: 14px 0 16px;
-    border-top: 1px solid var(--color-grey-medium);
-}
-
-.related-articles__item:last-of-type {
-    border-bottom: 1px solid var(--color-grey-medium);
-}
-
-@media (min-width: 900px) {
-    .related-articles__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .related-articles__item {
-        padding: 16px 32px 32px 24px;
-        margin-left: 1px;
-        margin-top: 1px;
-        box-shadow: 0 0 0 1px var(--color-grey-lighter);
-        border: none;
-    }
-
-    .related-articles__item:last-of-type {
-        border-bottom: none;
-    }
-}
-
 @media (min-width: 1250px) {
     .related-articles__title {
         font-size: 24px;
