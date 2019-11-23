@@ -77,11 +77,11 @@ layout: page.njk
     </div>
     <div class="main__related-articles related-articles">
         <h2 class="related-articles__title">По теме</h2>
-        <ul class="related-articles__list">
+        <ul class="articles articles--related">
             {% set articleClass %}{{ '--related' }}{% endset %}
             {# Необходима реализация показа статей "По теме" #}
             {%- for article in collections.article | reverse -%}
-                <li class="related-articles__item">
+                <li class="articles__item articles__item--related">
                     {% include 'article-card.njk' %}
                 </li>
             {%- endfor -%}
