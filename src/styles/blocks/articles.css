@@ -8,11 +8,11 @@
 
 .articles__item {
     padding: 14px 0 16px;
-    border-top: 1px solid var(--color-grey-lighter);
+    border-top: 1px solid var(--color-grey-medium);
 }
 
 .articles__item:last-of-type {
-    border-bottom: 1px solid var(--color-grey-lighter);
+    border-bottom: 1px solid var(--color-grey-medium);
 }
 
 @media (min-width: 1024px) {
@@ -23,10 +23,6 @@
 }
 
 /* Main */
-
-.articles__item--main {
-    border-color: var(--color-grey-medium);
-}
 
 @media (min-width: 800px) {
     .articles--main {
@@ -44,11 +40,13 @@
     }
 }
 
-/* Related */
+/* Articles */
 
-.articles__item--related {
-    border-color: 1px solid var(--color-grey-medium);
+.articles__item--articles {
+    border-color: var(--color-grey-lighter);
 }
+
+/* Related */
 
 @media (min-width: 900px) {
     .articles--related {
