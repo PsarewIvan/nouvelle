@@ -10,6 +10,7 @@
 
 .article-card__picture {
     grid-area: picture;
+    height: auto;
 }
 
 .article-card__title {
@@ -53,6 +54,40 @@
     text-decoration: underline;
 }
 
+/* Articles */
+
+@media (min-width: 800px) {
+    .article-card--articles {
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 1fr 2fr 7fr;
+        grid-template-areas:
+            'date picture author title';
+        grid-gap: 32px;
+        align-items: baseline;
+    }
+
+    .article-card__picture--articles {
+        align-self: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-card__title--articles {
+        font-size: 32px;
+    }
+
+    .article-card__date--articles,
+    .article-card__author--articles {
+        font-size: 16px;
+    }
+
+    .article-card__picture--articles {
+        width: 112px;
+    }
+}
+
+/* Related-articles */
+
 @media (min-width: 900px) {
     .article-card--related {
         grid-template-rows: 1fr repeat(5, min-content);
@@ -70,16 +105,16 @@
 }
 
 @media (min-width: 1250px) {
-    .article-card__title {
+    .article-card__title--related {
         font-size: 32px;
     }
 
-    .article-card__date,
-    .article-card__author {
+    .article-card__date--related,
+    .article-card__author--related {
         font-size: 16px;
     }
 
-    .article-card__picture {
+    .article-card__picture--related {
         width: 112px;
         height: 104px;
     }
