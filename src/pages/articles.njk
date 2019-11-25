@@ -14,11 +14,11 @@ permalink: articles/index.html
         <time class="archive__year">2019</time>
     </div>
 
-    {% set articleClass %}{{ '--articles' }}{% endset %}
+    {% set articleType %}{{ '--articles' }}{% endset %}
 
-    <ul class="articles articles{{ articleClass }}">
+    <ul class="articles articles{{ articleType }}">
         {%- for article in collections.article | reverse -%}
-            <li class="articles__item articles__item{{ articleClass }}">
+            <li class="articles__item articles__item{{ articleType }}">
                 {% include 'article-card.njk' %}
             </li>
         {%- endfor -%}
