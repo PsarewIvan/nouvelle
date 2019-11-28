@@ -38,11 +38,16 @@
         box-shadow: 0 0 0 1px var(--color-grey-lighter);
         border: none;
     }
+
+    .articles__item--main:last-of-type {
+        border-bottom: none;
+    }
 }
 
 /* Articles */
 
-.articles__item--articles {
+.articles__item--articles,
+.articles__item--articles:last-of-type {
     border-color: var(--color-grey-lighter);
 }
 
