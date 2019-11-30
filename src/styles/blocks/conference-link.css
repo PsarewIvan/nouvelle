@@ -30,10 +30,6 @@
     background-size: auto 24px;
 }
 
-.conference-link__description {
-    display: none;
-}
-
 @media (min-width: 900px) {
     .conference-link {
         font-size: 36px;
