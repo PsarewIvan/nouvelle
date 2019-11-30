@@ -1,7 +1,7 @@
 ---
 title: 'Архитектура CSS'
 date: 2014-02-20
-author: philip-walton
+author: phillip-walton
 source:
     title: 'CSS Architecture'
     url: 'http://philipwalton.com/articles/css-architecture/'
