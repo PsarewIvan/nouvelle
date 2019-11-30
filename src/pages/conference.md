@@ -1,6 +1,7 @@
 ---
 date: 2019-04-05
-title: '12 мая конференция в Москве'
+title: 'конференция в Москве'
+url: '#'
 tags: conference
 permalink: false
 ---
