@@ -53,13 +53,11 @@
 /* Item */
 
 .informer__item {
-    display: flex;
     padding-left: 40px;
 }
 
 @media (min-width: 375px) {
     .informer__item {
-        flex-direction: column;
         padding-left: 54px;
     }
 }
@@ -123,6 +121,24 @@
 @media (min-width: 769px) {
     .informer__item--calendar {
         background: none;
+    }
+}
+
+/* Link */
+
+.informer__link {
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+.informer__link:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 375px) {
+    .informer__link {
+        flex-direction: column;
     }
 }
 
