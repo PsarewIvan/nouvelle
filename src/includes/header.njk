@@ -12,22 +12,30 @@
     </div>
     <ul class="header__informer informer">
         <li class="informer__item informer__item--wave">
-            <a class="informer__link" href="#">
-                <strong class="informer__meta informer__meta--wave">164</strong>
-                <p class="informer__text">
-                    Автор JS-интенсивов, встроенный скроллер в Chrome развитие SVG и &amp; в CSS
-                </p>
-            </a>
+            {%- for podcast in collections.podcast -%}
+                <a class="informer__link" href={{ podcast.data.url }}>
+                    <strong class="informer__meta informer__meta--wave">
+                        {{ podcast.data.order }}
+                    </strong>
+                    <p class="informer__text">
+                        {{ podcast.data.title }}
+                    </p>
+                </a>
+            {%- endfor -%}
         </li>
         <li class="informer__item informer__item--calendar">
-            <a class="informer__link" href="#">
-                <strong class="informer__meta informer__meta--calendar">
-                    <time datetime="2019-04-05">5 апр</time>
-                </strong>
+            {%- for conference in collections.conference -%}
+                <a class="informer__link" href={{ conference.data.url }}>
+                    <strong class="informer__meta informer__meta--calendar">
+                        <time datetime="{{ conference.data.date | isoDate }}">
+                            {{ conference.data.date | shortDate }}
+                        </time>
+                    </strong>
                 <p class="informer__text">
-                    Конференция в Москве, еще одна строка желательна
+                    {{ conference.data.title }}
                 </p>
             </a>
+            {%- endfor -%}
         </li>
     </ul>
 </header>
