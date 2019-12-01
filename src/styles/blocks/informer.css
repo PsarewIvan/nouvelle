@@ -224,6 +224,10 @@
     line-height: 1.5;
 }
 
+.informer__text::first-letter {
+    text-transform: capitalize;
+}
+
 @media (min-width: 375px) {
     .informer__text {
         font-size: 12px;
