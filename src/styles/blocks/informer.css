@@ -95,12 +95,12 @@
 
 .informer__link:hover,
 .informer__link:active {
-    color: var(--color-turquoise);
+    color: var(--color-turquoise-medium);
 }
 
 .informer__link:hover .informer__icon,
 .informer__link:active .informer__icon {
-    fill: var(--color-turquoise);
+    fill: var(--color-turquoise-medium);
 }
 
 @media (min-width: 375px) {
