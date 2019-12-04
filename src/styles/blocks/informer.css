@@ -119,7 +119,7 @@
 
 @media (min-width: 375px) {
     .informer__meta {
-        padding-left: 54px;
+        padding-left: 40px;
         margin-right: 0;
         margin-bottom: 8px;
         font-size: 21px;
@@ -133,12 +133,6 @@
         margin-bottom: 8px;
         font-size: 28px;
         letter-spacing: 0.02em;
-    }
-}
-
-@media (min-width: 769px) {
-    .informer__meta {
-        padding-left: 54px;
     }
 }
 
@@ -168,6 +162,7 @@
 
 @media (min-width: 375px) {
     .informer__text {
+        padding-left: 40px;
         font-size: 14px;
         line-height: 1.3;
         letter-spacing: -0.03em;
@@ -186,6 +181,12 @@
     }
 }
 
+@media (min-width: 769px) {
+    .informer__text {
+        padding-left: 0;
+    }
+}
+
 /* Icon */
 
 .informer__icon {
@@ -196,8 +197,18 @@
 
 @media (min-width: 375px) {
     .informer__icon {
-        top: 6px;
         left: 0;
+    }
+
+    .informer__icon--calendar {
+        top: 2px;
+    }
+}
+
+@media (min-width: 568px) {
+    .informer__icon,
+    .informer__icon--calendar {
+        top: 5px;
     }
 }
 
