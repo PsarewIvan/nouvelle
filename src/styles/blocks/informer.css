@@ -237,7 +237,7 @@
 /* Animate */
 
 @keyframes sideSlidesTop {
-    from {
+    0% {
         transform: scaleY(1) translateY(0);
     }
 
@@ -245,13 +245,13 @@
         transform: scaleY(2) translateY(-20px);
     }
 
-    to {
+    100% {
         transform: scaleY(1) translateY(0);
     }
 }
 
 @keyframes sideSlidesBottom {
-    from {
+    0 {
         transform: scaleY(1);
     }
 
@@ -259,13 +259,13 @@
         transform: scaleY(2) translateY(-70px);
     }
 
-    to {
+    100% {
         transform: scaleY(1) translateY(0);
     }
 }
 
 @keyframes middleSlides {
-    from {
+    0% {
         transform: scaleY(1);
     }
 
@@ -273,13 +273,13 @@
         transform: scaleY(0.5) translateY(50px);
     }
 
-    to {
+    100% {
         transform: scaleY(1) translateY(0);
     }
 }
 
 @keyframes topCalendar {
-    from {
+    0% {
         transform: translateX(0);
     }
 
@@ -287,13 +287,13 @@
         transform: translateX(-345px);
     }
 
-    to {
+    100% {
         transform: translateX(0);
     }
 }
 
 @keyframes bottomCalendar {
-    from {
+    0% {
         transform: translateX(0);
     }
 
@@ -301,7 +301,7 @@
         transform: translateX(165px);
     }
 
-    to {
+    100% {
         transform: translateX(0);
     }
 }
