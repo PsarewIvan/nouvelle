@@ -236,7 +236,7 @@
 
 /* Animate */
 
-@keyframes sideSlidesTop {
+@keyframes side-slides-top {
     0% {
         transform: scaleY(1) translateY(0);
     }
@@ -250,7 +250,7 @@
     }
 }
 
-@keyframes sideSlidesBottom {
+@keyframes side-slides-bottom {
     0% {
         transform: scaleY(1);
     }
@@ -264,7 +264,7 @@
     }
 }
 
-@keyframes middleSlides {
+@keyframes middle-slides {
     0% {
         transform: scaleY(1);
     }
@@ -278,7 +278,7 @@
     }
 }
 
-@keyframes topCalendar {
+@keyframes top-calendar {
     0% {
         transform: translateX(0);
     }
@@ -292,7 +292,7 @@
     }
 }
 
-@keyframes bottomCalendar {
+@keyframes bottom-calendar {
     0% {
         transform: translateX(0);
     }
@@ -313,23 +313,23 @@
 
 .informer__link:hover .informer__icon--topleft,
 .informer__link:hover .informer__icon--topright {
-    animation-name: sideSlidesTop;
+    animation-name: side-slides-top;
 }
 
 .informer__link:hover .informer__icon--bottomleft,
 .informer__link:hover .informer__icon--bottomright {
-    animation-name: sideSlidesBottom;
+    animation-name: side-slides-bottom;
 }
 
 .informer__link:hover .informer__icon--topmiddle,
 .informer__link:hover .informer__icon--bottommiddle  {
-    animation-name: middleSlides;
+    animation-name: middle-slides;
 }
 
 .informer__link:hover .informer__icon--topcalendar  {
-    animation-name: topCalendar;
+    animation-name: top-calendar;
 }
 
 .informer__link:hover .informer__icon--bottomcalendar  {
-    animation-name: bottomCalendar;
+    animation-name: bottom-calendar;
 }
