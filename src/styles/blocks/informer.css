@@ -242,7 +242,7 @@
     }
 
     50% {
-        transform: scaleY(2) translateY(-25px);
+        transform: scaleY(2) translateY(-20px);
     }
 
     to {
@@ -278,6 +278,34 @@
     }
 }
 
+@keyframes topCalendar {
+    from {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-345px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bottomCalendar {
+    from {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(165px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 .informer__icon-group {
     transform-origin: center bottom;
     animation-duration: 0.8s;
@@ -296,4 +324,12 @@
 .informer__link:hover .informer__icon--topmiddle,
 .informer__link:hover .informer__icon--bottommiddle  {
     animation-name: middleSlides;
+}
+
+.informer__link:hover .informer__icon--topcalendar  {
+    animation-name: topCalendar;
+}
+
+.informer__link:hover .informer__icon--bottomcalendar  {
+    animation-name: bottomCalendar;
 }
