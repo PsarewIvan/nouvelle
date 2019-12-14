@@ -12,6 +12,7 @@ editors:
     - nikita-dubko
 layout: article.njk
 tags: article
+Featured: true
 ---
 
 <img src="images/audit-result.jpg" alt="">
