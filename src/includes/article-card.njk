@@ -9,6 +9,10 @@
         </a>
     </h3>
 
+    {% if article.data.featured == true %}
+        <p class="article-card__preview">{{ article.data.preview }}</p>
+    {% endif %}
+
     <time class="article-card__date article-card__date{{ articleType }} article-card__date{{ featured }}" datetime="{{ article.date | isoDate }}">
         {{ article.date | ruDate }}
     </time>
