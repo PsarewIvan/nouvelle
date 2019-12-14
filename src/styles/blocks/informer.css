@@ -309,6 +309,7 @@
 .informer__icon-group {
     transform-origin: center bottom;
     animation-duration: 0.8s;
+    animation-iteration-count: infinite;
 }
 
 .informer__link:hover .informer__icon--topleft,
