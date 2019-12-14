@@ -14,11 +14,13 @@
             {{ author.name }}
         </a>
 
+        {% if article.data.featured != true %}
         <img class="
                 article-card__picture
                 article-card__picture{{ articleType }} {% blob author.name %}"
             src="/images/author--placeholder.jpg"
             width="80" height="74"
             alt="{{ author.name }}">
+        {% endif %}
     {% endfor %}
 </article>
