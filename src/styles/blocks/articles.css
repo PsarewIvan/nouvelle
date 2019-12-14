@@ -80,6 +80,26 @@
 
 /* Featured */
 
+.articles__item--featured {
+    display: flex;
+    padding: 16px 0 0;
+    flex-direction: column;
+    background-color: var(--color-grey-dark);
+}
+
+.articles__item--featured::after {
+    content: ' ';
+    display: block;
+    align-self: center;
+    min-width: 320px;
+    width: 100%;
+    height: 170px;
+    background-image: url('/images/patterns/dots.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 @media (min-width: 800px) {
     .articles__item--featured {
         grid-row-start: 1;
