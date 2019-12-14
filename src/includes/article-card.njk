@@ -1,16 +1,20 @@
-<article class="article-card article-card{{ articleType }}">
-    <h3 class="article-card__title article-card__title{{ articleType }}">
-        <a class="article-card__link article-card__link{{ articleType }}" href="{{ article.url }}">
+{% if article.data.featured == true %}
+    {% set featured %}{{ '--featured' }}{% endset %}
+{% endif %}
+
+<article class="article-card article-card{{ articleType }} article-card{{ featured }}">
+    <h3 class="article-card__title article-card__title{{ articleType }} article-card__title{{ featured }}">
+        <a class="article-card__link article-card__link{{ articleType }} article-card__link{{ featured }}" href="{{ article.url }}">
             {{ article.data.title }}
         </a>
     </h3>
 
-    <time class="article-card__date article-card__date{{ articleType }}" datetime="{{ article.date | isoDate }}">
+    <time class="article-card__date article-card__date{{ articleType }} article-card__date{{ featured }}" datetime="{{ article.date | isoDate }}">
         {{ article.date | ruDate }}
     </time>
 
     {% for author in collections.people | filterPeople(article.data.author) %}
-        <a class="article-card__author article-card__author{{ articleType }}" href="{{ author.url }}">
+        <a class="article-card__author article-card__author{{ articleType }} article-card__author{{ featured }}" href="{{ author.url }}">
             {{ author.name }}
         </a>
 
