@@ -172,3 +172,9 @@
 .article-card__author--featured {
     color: white;
 }
+
+@media (min-width: 1024px) {
+    .article-card__preview {
+        font-size: 16px;
+    }
+}
