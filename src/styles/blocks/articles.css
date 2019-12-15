@@ -100,9 +100,28 @@
     background-size: cover;
 }
 
+@media (min-width: 500px) {
+    .articles__item--featured::after {
+        height: 220px;
+    }
+}
+
 @media (min-width: 800px) {
     .articles__item--featured {
         grid-row-start: 1;
         grid-row-end: 3;
+    }
+
+    .articles__item--featured::after {
+        width: auto;
+        align-self: stretch;
+        height: 170px;
+        margin: 0 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .articles__item--featured::after {
+        height: 220px;
     }
 }
