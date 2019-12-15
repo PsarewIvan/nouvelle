@@ -58,9 +58,7 @@
     .article-card__title {
         min-height: 4em;
     }
-}
 
-@media (min-width: 900px) {
     .article-card {
         grid-template-rows: 1fr repeat(5, min-content);
         grid-template-columns: 1fr min-content;
