@@ -20,6 +20,10 @@ module.exports = function(config) {
         return [...set].sort();
     });
 
+    config.addFilter('filterFiveArticles', function(array) {
+        return (array.length > 5) ? array.slice(0, 5) : array;
+    });
+
     config.addFilter('filterArticles', function(array) {
         return array.filter(post =>
             post.inputPath.startsWith('./src/articles/')
