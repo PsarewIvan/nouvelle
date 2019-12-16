@@ -151,6 +151,7 @@
 
 .article-card__title--featured {
     width: 100%;
+    min-height: auto;
     margin-bottom: 16px;
 }
 
@@ -160,9 +161,15 @@
 }
 
 .article-card__preview {
+    width: 100%;
     margin-bottom: 32px;
     font-size: 12px;
     line-height: 1.3;
+}
+
+.article-card__date--featured,
+.article-card__author--featured {
+    align-self: flex-end;
 }
 
 .article-card__date--featured {
@@ -171,6 +178,12 @@
 
 .article-card__author--featured {
     color: white;
+}
+
+@media (min-width: 800px) {
+    .article-card__preview {
+        min-height: 5em;
+    }
 }
 
 @media (min-width: 1024px) {
