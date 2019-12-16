@@ -21,7 +21,15 @@ module.exports = function(config) {
     });
 
     config.addFilter('filterFiveArticles', function(array) {
-        return (array.length > 5) ? array.slice(0, 5) : array;
+        let fiveArticles = [];
+        array.some(function(item, i) {
+            if (item.data.featured === true) {
+                fiveArticles.push(item);
+                array.splice(i, 1);
+                return true;
+            };
+        });
+        return fiveArticles.concat(array.slice(0,4));
     });
 
     config.addFilter('filterArticles', function(array) {
