@@ -85,6 +85,7 @@
     padding: 16px 0 0;
     flex-direction: column;
     background-color: var(--color-grey-dark);
+    border-top: none;
 }
 
 .articles__item--featured::after {
@@ -110,6 +111,8 @@
     .articles__item--featured {
         grid-row-start: 1;
         grid-row-end: 3;
+        box-shadow: 0 0 0 1px var(--color-grey-dark);
+        z-index: 1;
     }
 
     .articles__item--featured::after {
