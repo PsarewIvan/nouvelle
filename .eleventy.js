@@ -29,7 +29,7 @@ module.exports = function(config) {
                 return true;
             };
         });
-        return fiveArticles.concat(array.slice(0,4));
+        return fiveArticles.concat(array.slice(0, 4));
     });
 
     config.addFilter('filterArticles', function(array) {
@@ -37,6 +37,7 @@ module.exports = function(config) {
             post.inputPath.startsWith('./src/articles/')
         );
     });
+
     config.addFilter('filterArticleTag', function(tagsCollection) {
         return tagsCollection.filter(tag => tag !== 'article');
     });
