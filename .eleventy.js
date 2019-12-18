@@ -20,16 +20,15 @@ module.exports = function(config) {
         return [...set].sort();
     });
 
-    config.addFilter('filterFiveArticles', function(array) {
-        let fiveArticles = [];
-        array.some(function(item, i) {
-            if (item.data.featured === true) {
-                fiveArticles.push(item);
-                array.splice(i, 1);
-                return true;
-            };
-        });
-        return fiveArticles.concat(array.slice(0, 4));
+    config.addFilter('filterIndexArticles', function(array) {
+        const featured = array.find((item) => item.data.featured);
+        let notFeatured = [];
+        for (let i = 0; notFeatured.length < 4; i++) {
+            if (!array[i].data.featured) {
+                notFeatured.push(array[i]);
+            }
+        }
+        return [featured, ...notFeatured];
     });
 
     config.addFilter('filterArticles', function(array) {
