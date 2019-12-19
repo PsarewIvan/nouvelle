@@ -242,7 +242,7 @@
     }
 
     50% {
-        transform: scaleY(2) translateY(-20px);
+        transform: scaleY(2) translateY(-100px);
     }
 
     100% {
@@ -256,7 +256,7 @@
     }
 
     50% {
-        transform: scaleY(2) translateY(-70px);
+        transform: scaleY(2) translateY(-170px);
     }
 
     100% {
@@ -270,7 +270,21 @@
     }
 
     50% {
-        transform: scaleY(0.5) translateY(50px);
+        transform: scaleY(0.5) translateY(200px);
+    }
+
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+@keyframes center-slides {
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.2) translateY(-30px);
     }
 
     100% {
@@ -332,4 +346,8 @@
 
 .informer__link:hover .informer__icon--bottomcalendar  {
     animation-name: bottom-calendar;
+}
+
+.informer__link:hover .informer__icon--center  {
+    animation-name: center-slides;
 }
