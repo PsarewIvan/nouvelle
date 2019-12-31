@@ -1,20 +1,18 @@
 ---
 title: 'В HTML5 добавлен новый атрибут translate'
 date: 2012-07-30
+author: richard-ishida
 source:
     title: 'HTML5 adds new translate attribute'
     url: 'http://rishida.net/blog/?p=831'
-    author: 'Ричард Ишида'
 translators:
-  - name: 'Влад Андерсен'
-    url: 'http://www.facebook.com/vlad.andersen'
+    - vlad-andersen
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - html
+    - article
+    - html
 ---
 
 В HTML5 недавно [добавился новый атрибут](http://dev.w3.org/html5/spec/global-attributes.html#the-translate-attribute) — `translate`. На трёх [семинарах MultilingualWeb](http://multilingualweb.eu/), которые мы провели за последние два года, идея такого булева флага — «переводить или не переводить» постоянно вызывает довольно большой интерес у локализаторов, создателей текста, и всех тех, кто работает с языковыми технологиями.
@@ -35,31 +33,43 @@ tags:
 
 Потребность в этом встречается довольно-таки часто. В спецификации HTML5 есть [пример с игрой про пчелу и мёд](http://developers.whatwg.org/elements.html#the-translate-attribute). Вот похожий, но на этот раз реальный пример из моего опыта работы в Xerox, где документация, которая переводилась на другой язык, относилась к устройству, на котором текст находился прямо на «железе» и поэтому не переводился.
 
-    <p>Click the Resume button on the Status Display or the <span class="panelmsg" translate="no">CONTINUE</span> button the printer panel.</p>
+```html
+<p>Click the Resume button on the Status Display or the <span class="panelmsg" translate="no">CONTINUE</span> button the printer panel.</p>
+```
 
 Оригинальный текст на английском — _прим. переводчика._
 
-    <p>Нажмите кнопку «Продолжить» на дисплее состояния или кнопку  <span class="panelmsg" translate="no">CONTINUE</span> на панели принтера.</p>
+```html
+<p>Нажмите кнопку «Продолжить» на дисплее состояния или кнопку  <span class="panelmsg" translate="no">CONTINUE</span> на панели принтера.</p>
+```
 
 Текст при переводе на русский язык — _прим. переводчика._
 
 Вот ещё несколько примеров текста из жизни, которым принесет пользу атрибут `translate`. Отрывок из книги, цитирующий название работы.
 
-    <p>The question in the title <cite translate="no">How Far Can You Go?</cite> applies to both the undermining of traditional religious belief by radical theology and the undermining of literary convention by the device of “breaking frame”…</p>
+```html
+<p>The question in the title <cite translate="no">How Far Can You Go?</cite> applies to both the undermining of traditional religious belief by radical theology and the undermining of literary convention by the device of “breaking frame”…</p>
+```
 
 Оригинальный текст на английском — _прим. переводчика._
 
-    <p>Вопрос в названии, <cite translate="no">How Far Can You Go?</cite>, относится и к отрицательному влиянию радикальной теологии на традиционные религиозные воззрения, и к отрицательному влиянию приема «разрыва рамок» на правила построения литературного произведения…</p>
+```html
+<p>Вопрос в названии, <cite translate="no">How Far Can You Go?</cite>, относится и к отрицательному влиянию радикальной теологии на традиционные религиозные воззрения, и к отрицательному влиянию приема «разрыва рамок» на правила построения литературного произведения…</p>
+```
 
 При переводе на русский язык. На русском языке в таких случаях, впрочем, название работы обычно принято переводить — _прим. переводчика._
 
 Следующий пример со страницы о французском хлебе — «хлеб» по-французски «pain».
 
-    <p>Welcome to <strong translate="no">french pain</strong> on Facebook. Join now to write reviews and connect with <strong translate="no">french pain</strong>. Help your friends discover great places to visit by recommending <strong translate="no">french pain</strong>.</p>
+```html
+<p>Welcome to <strong translate="no">french pain</strong> on Facebook. Join now to write reviews and connect with <strong translate="no">french pain</strong>. Help your friends discover great places to visit by recommending <strong translate="no">french pain</strong>.</p>
+```
 
 Оригинальный текст на английском — _прим. переводчика._
 
-    <p>Добро пожаловать на страницу <strong translate="no">french pain</strong> на Facebook. Присоединяйтесь, пишите отчеты и свяжитесь с <strong translate="no">french pain</strong>. Помогите друзьям узнать отличные новые места, порекомендовав им <strong translate="no">french pain</strong>.</p>
+```html
+<p>Добро пожаловать на страницу <strong translate="no">french pain</strong> на Facebook. Присоединяйтесь, пишите отчеты и свяжитесь с <strong translate="no">french pain</strong>. Помогите друзьям узнать отличные новые места, порекомендовав им <strong translate="no">french pain</strong>.</p>
+```
 
 При переводе на русский язык. Речь идет о французской компании, которая называется «french pain» — _прим. переводчика._
 

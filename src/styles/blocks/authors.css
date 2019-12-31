@@ -1,18 +1,11 @@
 .authors {
     display: flex;
     font-size: 10px;
-    line-height: 130%;
+    line-height: 1.3;
     color: black;
 }
 
 .authors__author-avatar {
-    display: none;
-}
-
-.authors__author-roles-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
     display: none;
 }
 
@@ -27,31 +20,41 @@
     margin-right: 33px;
 }
 
-.authors__author-link,
-.authors__collaborators-link {
+.authors__collaborators-link:link {
     color: var(--color-grey-darker);
     letter-spacing: -0.03em;
 }
 
-.authors__collaborators-link:hover,
-.authors__collaborators-link:focus {
-    opacity: 0.6;
+.authors__collaborators-link:visited {
+    color: var(--color-grey-lighter);
 }
 
-.authors__author-link {
+.authors__collaborators-link:hover,
+.authors__collaborators-link:active {
+    color: var(--color-turquoise);
+}
+
+.authors__author-link:link {
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.05em;
+    color: var(--color-grey-darker);
+    transition: color 0.2s linear;
 }
 
-.authors__author-link:hover,
-.authors__author-link:focus {
+.authors__author-link:hover {
     text-decoration: underline;
 }
 
 .authors__collaborators-heading {
     font-weight: 600;
     letter-spacing: 0.01em;
+}
+
+@media (min-width: 900px) {
+    .authors {
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -70,16 +73,11 @@
         margin-right: 39px;
     }
 
-    .authors__author-roles-list {
-        display: block;
-    }
-
     .authors__author-link,
-    .authors__collaborators,
-    .authors__author-roles-list {
+    .authors__collaborators {
         margin-top: 16px;
         font-size: 16px;
-        line-height: 160%;
+        line-height: 1.6;
     }
 
     .authors__collaborators-heading {
@@ -108,8 +106,7 @@
     }
 
     .authors__author-link,
-    .authors__collaborators,
-    .authors__author-roles-list {
+    .authors__collaborators {
         margin-top: 0;
     }
 

@@ -1,21 +1,19 @@
 ---
-title: 'Как на самом деле работает position: sticky в CSS'
+title: 'Как на самом деле работает position: sticky в CSS'
 date: 2019-01-31
+author: elad-shechter
 source:
     title: 'CSS position: sticky — how it really works!'
     url: 'https://medium.com/p/54cd01dc2d46'
-    author: 'Элад Шехтер'
 translators:
-  - name: 'Алёна Батицкая'
-    url: 'https://medium.com/@ABatickaya'
+    - alena-batickaya
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - html
-  - css
+    - article
+    - html
+    - css
 ---
 
 У `position: sticky` уже очень неплохая браузерная поддержка, но большинство разработчиков так и не используют это свойство.
@@ -24,7 +22,7 @@ tags:
 
 Во-вторых, многие разработчики до конца не понимают логику, по которой это свойство работает. И тут появляюсь я!
 
-![](images/1.png)
+<img src="images/1.png" alt="">
 
 Я полагаю, что вы хорошо знакомы с позиционированием в CSS, но давайте кратко повторим основные моменты:
 
@@ -42,10 +40,12 @@ tags:
 
 Пример:
 
-    .some-component {
-      position: sticky;
-      top: 0;
-    }
+```css
+.some-component {
+    position: sticky;
+    top: 0;
+}
+```
 
 Проблема в том, что иногда это работает, а иногда нет. Когда всё работает, то элемент и правда залипает. Но когда не работает, то при прокрутке элемент перестаёт залипать. Как человеку, который живёт одним только CSS, мне было важно разобраться в сути проблемы. Именно поэтому я решил тщательно изучить **«липкое» позиционирование**.
 
@@ -53,23 +53,26 @@ tags:
 
 Во время своих экспериментов я заметил, что если элемент с `position: sticky` является единственным ребёнком своего родителя-обёртки, то этот «липкий» элемент не залипает.
 
-    <!-- НЕ РАБОТАЕТ!!! -->
-    <style>
-      .sticky {
+```html
+<!-- НЕ РАБОТАЕТ!!! -->
+<style>
+    .sticky {
         position: sticky;
         top: 0;
-      }
-    </style>
+    }
+</style>
 
-    <div class="wrapper">
-      <div class="sticky">
-         Некий контент
-      </div>
+<div class="wrapper">
+    <div class="sticky">
+        Некий контент
     </div>
+</div>
+```
 
 Когда я добавлял больше элементов внутрь родителя-обёртки всё начинало работать как ожидалось.
 
 **Почему так происходит?**
+
 Причина кроется в том, что элемент с `position: sticky` может перемещаться только в пределах контейнера, в котором находится. А поскольку в моём случае он был единственным ребёнком, у него не было элементов-братьев, поверх которых он мог перемещаться.
 
 ### Как на самом деле работает position: sticky в CSS
@@ -80,10 +83,12 @@ tags:
 
 Пример:
 
-    .some-component {
-      position: sticky;
-      top: 0px;
-    }
+```css
+.some-component {
+    position: sticky;
+    top: 0px;
+}
+```
 
 **«Липкий» контейнер** — это HTML-элемент, который оборачивает «липкий» элемент. Это максимальная область, в которой может перемещаться наш элемент.
 
@@ -94,11 +99,14 @@ tags:
 
 Наглядный пример:
 
-![](images/2.png)
+<img src="images/2.png" alt="">
 
-[Пример на CodePen:](https://codepen.io/elad2412/pen/QYLEdK)
-
-<iframe src="https://codepen.io/elad2412/embed/preview/MZZVjw"></iframe>
+<figure>
+    <iframe src="https://codepen.io/elad2412/embed/preview/MZZVjw"></iframe>
+    <figcaption>
+        <a href="https://codepen.io/elad2412/pen/QYLEdK">Пример на CodePen</a>.
+    </figcaption>
+</figure>
 
 ### Понимание «липкого» поведения
 
@@ -112,10 +120,12 @@ tags:
 
 В большинстве случаев вы будете использовать `position: sticky` чтобы прикрепить элемент к верхнему краю страницы. Что-то вроде этого:
 
-    .component {
-      position: sticky;
-      top: 0;
-    }
+```css
+.component {
+    position: sticky;
+    top: 0;
+}
+```
 
 Именно для таких сценариев и был создан этот тип позиционирования. До его появления такой трюк приходилось проворачивать с помощью JavaScript.
 
@@ -125,22 +135,29 @@ tags:
 
 HTML
 
-    <main class="main-container">
-      <header class="main-header">HEADER</header>
-      <div class="main-content">MAIN CONTENT</div>
-      <footer class="main-footer">FOOTER</footer>
-    </main>
+```html
+<main class="main-container">
+    <header class="main-header">HEADER</header>
+    <div class="main-content">MAIN CONTENT</div>
+    <footer class="main-footer">FOOTER</footer>
+</main>
+```
 
 CSS
 
-    .main-footer {
-      position: sticky;
-      bottom: 0;
-    }
+```css
+.main-footer {
+    position: sticky;
+    bottom: 0;
+}
+```
 
-[Живой пример на CodePen:](https://codepen.io/elad2412/pen/MZZVjw)
-
-<iframe src="https://codepen.io/elad2412/embed/preview/MZZVjw"></iframe>
+<figure>
+    <iframe src="https://codepen.io/elad2412/embed/preview/MZZVjw"></iframe>
+    <figcaption>
+        <a href="https://codepen.io/elad2412/pen/MZZVjw">Пример на CodePen</a>.
+    </figcaption>
+</figure>
 
 В реальной жизни я использую такое поведение для сводных таблиц. И, я думаю, с помощью этого приёма можно реализовать «липкую» навигацию в футере.
 
@@ -154,8 +171,12 @@ position: -webkit-sticky; /* Safari */
 position: sticky;
 ```
 
-![Более 86% браузеров поддерживает sticky по данным Can I Use](images/3.png)
-_Более 86% браузеров поддерживает sticky по данным [Can I Use](https://caniuse.com/#search=sticky)_
+<figure>
+    <img src="images/3.png" alt="">
+    <figcaption>
+        Более 86% браузеров поддерживает sticky по данным <a href="https://caniuse.com/#search=sticky">Can I Use</a>.
+    </figcaption>
+</figure>
 
 ## В заключении
 
@@ -164,25 +185,7 @@ _Более 86% браузеров поддерживает sticky по данн
 ### Другие мои посты о CSS
 
 - [New CSS Logical Properties!](https://medium.com/@elad/new-css-logical-properties-bc6945311ce7)
-
 - [Becoming a CSS Grid Ninja!](https://medium.com/@elad/becoming-a-css-grid-ninja-f4c6db018cc1)
-
 - [The New Responsive Design Evolution](https://medium.com/@elad/the-new-responsive-design-evolution-2bfb9b504a4e)
-
 - [The Best Way to RTL Websites with SASS!](https://medium.com/@elad/the-best-way-to-rtl-your-website-with-sass-105e34a4298a)
-
 - [CSS Architecture for Multiple Websites With SASS](https://medium.com/@elad/css-architecture-for-multiple-websites-with-sass-7e923fc53f7a)
-
-### Кто я?
-
-Меня зовут Элад Шехтер, я веб-разработчик, специализирующийся на дизайне и архитектуре CSS и HTML. Я работаю на [Investing.com](https://www.investing.com/).
-
-Читать меня можно тут: [мой Твиттер,](https://twitter.com/eladsc) [Facebook](https://www.facebook.com/eladsc), [LinkedIn](https://www.linkedin.com/).
-
-![](images/4.jpg)
-
-Вы можете найти меня в группах на Facebook:
-
-- [CSS Masters](https://www.facebook.com/groups/css.master/)
-
-- [CSS Masters Israel](https://www.facebook.com/groups/css.masters.israel/)

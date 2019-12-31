@@ -1,16 +1,13 @@
 ---
-title: 'О доступности интерфейсов из первых уст'
+title: 'О доступности интерфейсов из первых уст'
 date: 2018-02-19
-authors:
-  - name: 'Евгений Караваев'
-    url: 'https://medium.com/@karavaev.evgeniy'
+author: evgeniy-karavaev
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - a11y
+    - article
+    - a11y
 ---
 
 Уже не первый год мы в «Студии 15» занимаемся доступностью сайтов для людей с ограниченными возможностями. Чтобы делать эту работу качественнее и быстрее разрабатываем опенсорсную [библиотеку интерфейсных решений](https://github.com/15web/web-accessibility).

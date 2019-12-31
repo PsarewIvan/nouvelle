@@ -1,55 +1,71 @@
 <header class="header">
     <div class="header__logo logo">
-        <img class="logo__cube" src="/images/logo.svg" width="36" alt="">
-        <p class="logo__title">
-            {% if page.url != '/' %}<a href="/">{% endif %}
+        <a class="logo__link"{% if page.url != '/' %} href="/"{% endif %}>
+            <img class="logo__icon"
+                src="/images/logo.svg"
+                width="40" height="40"
+                alt="Логотип Веб-стандартов">
+            <p class="logo__title">
                 Веб-стандарты
-            {% if page.url != '/' %}</a>{% endif %}
-        </p>
-        <p class="logo__tagline">Сообщество разработчиков</p>
+            </p>
+            <p class="logo__tagline">
+                Сообщество разработчиков
+            </p>
+        </a>
     </div>
-    <nav class="header__navigation navigation">
-        <button class="navigation__button"
-            aria-label="Открыть меню"
-            aria-expanded="false"
-            aria-controls="navigation-menu"
-            type="button"
-        ></button>
-        <ul id="navigation-menu" class="navigation__pages">
-            <li class="navigation__page">
-                <a class="navigation__link" href="/articles/">Статьи</a>
-            </li>
-            <li class="navigation__page">
-                <a class="navigation__link">Конференция</a>
-            </li>
-            <li class="navigation__page">
-                <a class="navigation__link">Календарь</a>
-            </li>
-            <li class="navigation__page">
-                <a class="navigation__link">Подкаст</a>
-            </li>
-            <li class="navigation__page">
-                <a class="navigation__link">О проекте</a>
-            </li>
-            <li class="navigation__page navigation__page--right">
-                <a class="navigation__link" href="https://www.patreon.com/webstandards_ru">Поддержать проект</a>
-            </li>
-        </ul>
-    </nav>
+    {% if page.url == '/' %}
     <ul class="header__informer informer">
         <li class="informer__item informer__item--wave">
-            <strong class="informer__meta">164</strong>
-            <p class="informer__text">
-                Автор JS-интенсивов, встроенный скроллер в Chrome развитие SVG и &amp; в CSS
-            </p>
+            {%- for podcast in collections.podcast -%}
+                <a class="informer__link" href={{ podcast.data.url }}>
+                    <strong class="informer__meta informer__meta--wave">
+                        {{ podcast.data.number }}
+                    </strong>
+                    <p class="informer__text">
+                        {{ podcast.data.title }}
+                    </p>
+                    <svg class="informer__icon informer__icon--wave"
+                        viewBox="0 0 38 30" width="32" height="25"
+                        aria-hidden="true" focusable="false">
+                        <ellipse class="informer__icon-wave informer__icon-wave-middle" cx="19" cy="15" rx="19" ry="2.5"/>
+                        <ellipse class="informer__icon-wave informer__icon-wave-left" cx="28" cy="15" rx="2.3" ry="7"/>
+                        <ellipse class="informer__icon-wave informer__icon-wave-center" cx="19" cy="15" rx="2.5" ry="15"/>
+                        <ellipse class="informer__icon-wave informer__icon-wave-right" cx="10" cy="15" rx="2.3" ry="7"/>
+                    </svg>
+                </a>
+            {%- endfor -%}
         </li>
         <li class="informer__item informer__item--calendar">
-            <strong class="informer__meta">
-                <time datetime="2019-04-05">5 апр</time>
-            </strong>
-            <p class="informer__text">
-                Конференция в Москве, еще одна строка желательна
-            </p>
+            {%- for conference in collections.conference -%}
+                <a class="informer__link" href={{ conference.data.url }}>
+                    <strong class="informer__meta informer__meta--calendar">
+                        <time datetime="{{ conference.data.date | isoDate }}">
+                            {{ conference.data.date | shortDate }}
+                        </time>
+                    </strong>
+                <p class="informer__text">
+                    {{ conference.data.title }}
+                </p>
+                <svg class="informer__icon informer__icon--calendar"
+                    viewBox="0 0 32 23" width="32" height="23"
+                    aria-hidden="true" focusable="false">
+                    <g class="informer__icon-calendar informer__icon-calendar-top">
+                        <circle cx="20.53" cy="2.42" r="2.42"/>
+                        <circle cx="29.58" cy="2.42" r="2.42"/>
+                    </g>
+                    <circle cx="2.42" cy="11.48" r="2.42"/>
+                    <circle cx="11.47" cy="11.52" r="2.42"/>
+                    <circle cx="20.53" cy="11.48" r="2.42"/>
+                    <circle cx="29.58" cy="11.48" r="2.42"/>
+                    <g class="informer__icon-calendar informer__icon-calendar-bottom">
+                        <circle cx="2.42" cy="20.54" r="2.42"/>
+                        <circle cx="11.47" cy="20.58" r="2.42"/>
+                        <circle cx="20.53" cy="20.54" r="2.42"/>
+                    </g>
+                </svg>
+            </a>
+            {%- endfor -%}
         </li>
     </ul>
+    {% endif %}
 </header>

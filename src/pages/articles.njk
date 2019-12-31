@@ -1,0 +1,33 @@
+---
+title: Статьи
+layout: page.njk
+permalink: articles/index.html
+---
+
+{% include 'header.njk' %}
+
+<main class="main">
+    {{ content | safe }}
+
+    <div class="archive">
+        <h1 class="archive__title">Статьи</h1>
+        <time class="archive__year">2019</time>
+    </div>
+
+    {% set articleType %}{{ '--articles' }}{% endset %}
+
+    <ul class="articles articles{{ articleType }}">
+        {%- for article in collections.article | reverse -%}
+            <li class="articles__item articles__item{{ articleType }}">
+                {% include 'article-card.njk' %}
+            </li>
+        {%- endfor -%}
+    </ul>
+
+    <div class="main__conference-link">
+        {% include 'conference-link.njk' %}
+    </div>
+</main>
+
+{% include 'aside.njk' %}
+{% include 'footer.njk' %}

@@ -1,18 +1,17 @@
 ---
-title: 'Та же история, только с CSS'
+title: 'Та же история, только с CSS'
 date: 2019-01-16
+author: tobie-langel
 source:
     title: 'We’re seeing the same thing today…'
     url: 'https://twitter.com/tobie/status/1083316137826365442'
-    author: 'Тоби Лангел'
 translators:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - css
-  - js
+    - article
+    - css
+    - js
 ---
 
 Мы видим ту же ситуацию с CSS, которую видели с HTML и JS раньше — она привела к текущей ситуацией с JS-фреймворками. Тред👇

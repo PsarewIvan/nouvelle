@@ -1,16 +1,13 @@
 ---
 title: 'Как воспитать дизайнера'
 date: 2010-06-22
-authors:
-  - name: 'Ольга Алексашенко'
-    url: 'https://moikrug.ru/engel-t'
+author: olga-aleksashenko
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - design
+    - article
+    - design
 ---
 
 От автора, 2010-й год. С момента написания этой статьи прошло три года, и сейчас я понимаю, что во многом была слишком категорична, во многом — наивна, но в общем и целом — права. Нижеприведенные рекомендации по-прежнему актуальны. Читайте, фильтруйте, отсеивайте, пользуйтесь.

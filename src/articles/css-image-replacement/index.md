@@ -1,32 +1,32 @@
 ---
 title: 'Ещё одна CSS-техника замены текста изображением'
 date: 2012-09-10
+author: nicolas-gallagher
 source:
     title: 'Another CSS image replacement technique'
     url: 'http://nicolasgallagher.com/another-css-image-replacement-technique/'
-    author: 'Николас Галлахер'
 translators:
-  - name: 'Максим Усачёв'
-    url: 'https://twitter.com/psyw'
+    - maxim-usachev
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - html
-  - css
+    - article
+    - html
+    - css
 ---
 
 Недавно в проект [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) была добавлена новая техника замены текста изображением. В этой записи я расскажу, как она работает и как соотносится с альтернативными методами.
 
 Ниже приведен CSS [недавно обновлённого](https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7) вспомогательного класса (для замены текста изображением) из HTML5 Boilerplate. Этот код также попал во фреймворк [Compass](http://compass-style.org/).
 
-    .ir {
-        font: 0/0 a;
-         text-shadow: none;
-        color: transparent;
-     }
+```css
+.ir {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+```
 
 ## Что делает каждая из деклараций?
 

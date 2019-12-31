@@ -1,19 +1,18 @@
 ---
-title: 'Элементы figure и figcaption'
+title: 'Элементы figure и figcaption'
 date: 2012-03-12
+author: richard-clark
 source:
     title: 'The figure & figcaption elements'
     url: 'https://html5doctor.com/the-figure-figcaption-elements/'
-    author: 'Ричард Кларк'
 translators:
-  - name: 'Екатерина Мордвина'
+    - ekaterina-mordvina
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - html
+    - article
+    - html
 ---
 
 В обычных печатных изданиях, таких как книги и журналы, изображения, таблицы или примеры кода обычно сопровождаются подписью. До сих пор у нас не было возможности семантически выделять такой тип содержимого напрямую в HTML, вместо того чтобы прибегать к именам классов СSS. HTML5 надеется исправить эту проблему с помощью новых элементов: `<figure>` и `<figcaption>`. Давайте разберемся!
@@ -51,10 +50,11 @@ tags:
 
 Вот код для этого:
 
-    <figure>
-        <img src="orang-utan.jpg"
-             alt="Малыш орангутанга свисает с каната.">
-    </figure>
+```html
+<figure>
+    <img src="orang-utan.jpg" alt="Малыш орангутанга свисает с каната.">
+</figure>
+```
 
 ### `<figure>` с изображением и подписью
 
@@ -67,13 +67,15 @@ tags:
 
 И код, который мы использовали:
 
-    <figure>
-        <img src="macaque.jpg" alt="Макака на дереве.">
-        <figcaption>
-            Наглая макака из Борнео.
-            Фото <a href="…">Ричарда Кларка</a>
-        </figcaption>
-    </figure>
+```html
+<figure>
+    <img src="macaque.jpg" alt="Макака на дереве.">
+    <figcaption>
+        Наглая макака из Борнео.
+        Фото <a href="…">Ричарда Кларка</a>
+    </figcaption>
+</figure>
+```
 
 ### `<figure>` с несколькими изображениями
 
@@ -91,15 +93,17 @@ tags:
 
 И сам код:
 
-    <figure>
-        <img src="kookaburra.jpg" alt="Кукабара.">
-        <img src="pelican.jpg" alt="Пеликан на пляже.">
-        <img src="lorikeet.jpg" alt="Наглый многоцветный лорикет.">
-        <figcaption>
-            Слева направо: кукабара, пеликан и многоцветный лорикет.
-            Фотографии <a href="…">Ричарда Кларка</a>
-        </figcaption>
-    </figure>
+```html
+<figure>
+    <img src="kookaburra.jpg" alt="Кукабара.">
+    <img src="pelican.jpg" alt="Пеликан на пляже.">
+    <img src="lorikeet.jpg" alt="Наглый многоцветный лорикет.">
+    <figcaption>
+        Слева направо: кукабара, пеликан и многоцветный лорикет.
+        Фотографии <a href="…">Ричарда Кларка</a>
+    </figcaption>
+</figure>
+```
 
 ### `<figure>` с блоком кода
 
@@ -120,20 +124,22 @@ tags:
 
 Ниже приведен код для этого:
 
-    <figure>
-        <blockquote>
-            <p><code><small>
-                <a rel="license" href="…">
-                    Creative Commons Attribution Share-alike license
-                </a>
-            </small></code></p>
-        </blockquote>
-        <figcaption>
-            Использование элемента <code>&lt;small&gt;</code>
-            вокруг ссылки на лицензию Creative Commons
-            с <code>rel="license"</code>.
-        </figcaption>
-    </figure>
+```html
+<figure>
+    <blockquote>
+        <p><code><small>
+            <a rel="license" href="…">
+                Creative Commons Attribution Share-alike license
+            </a>
+        </small></code></p>
+    </blockquote>
+    <figcaption>
+        Использование элемента <code>&lt;small&gt;</code>
+        вокруг ссылки на лицензию Creative Commons
+        с <code>rel="license"</code>.
+    </figcaption>
+</figure>
+```
 
 ### Различия между `<figure>` и `<aside>`
 

@@ -1,24 +1,22 @@
 ---
 title: 'Просто используйте стили для :focus, чёрт возьми'
 date: 2018-12-10
+author: chris-ferdinandi
 source:
     title: 'Just use :focus styles, damnit'
     url: 'https://gomakethings.com/just-use-focus-styles-damnit/'
-    author: 'Крис Фердинанди'
 translators:
-  - name: 'Татьяна Фокина'
-    url: 'https://medium.com/@fokinatatiana'
+    - tatiana-fokina
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - css
-  - a11y
+    - article
+    - css
+    - a11y
 ---
 
-![If it’s interactive, it needs a focus style](images/1.png)
+<img src="images/1.png" alt="If it’s interactive, it needs a focus style.">
 
 За последнее время появилось несколько статей и рекомендаций от разных людей о том, как использовать псевдокласс `:focus-visible`, чтобы показать стили для `:focus`, когда кто-то пользуется клавиатурой, и скрывать их, если пользователь использует мышь.
 

@@ -1,24 +1,20 @@
 ---
 title: 'Не проверив HTML5-кода, не суйся в воду — с Майком™ Смитом'
 date: 2014-12-26
+author: steve-faulkner
 source:
     title: 'HTML5 — Check it Before you Wreck it with Mike™ Smith'
     url: 'https://html5doctor.com/html5-check-it-before-you-wreck-it-with-miketm-smith/'
-    author: 'Стив Фолкнер'
 translators:
-  - name: 'Максим Усачёв'
-    url: 'https://twitter.com/psyw'
-  - name: 'Илья Стрельцын'
-    url: 'https://twitter.com/SelenIT2'
+    - maxim-usachev
+    - ilya-streltsin
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
-  - name: 'Ольга Алексашенко'
-    url: 'https://moikrug.ru/engel-t'
+    - vadim-makeev
+    - olga-aleksashenko
 layout: article.njk
 tags:
-  - article
-  - html
+    - article
+    - html
 ---
 
 [Майк™ Смит](http://people.w3.org/mike/) (известный как [@sideshowbarker](https://twitter.com/sideshowbarker)) из W3C — человек, с головой увязший в исходном коде инструмента W3C для _проверки <del>валидности</del> разметки_; эта _магия_ работает именно благодаря ему. Вопросы были заданы на радость и в назидание читателю сайта.
@@ -26,17 +22,17 @@ tags:
 **Во-первых, расскажите нам немного о том, чем вы занимаетесь и над чем работаете**
 
 <figure>
-	<img src="images/mike.jpg" alt="Майк™ Смит">
-	<figcaption>Майк™ Смит — заместитель директора @W3C: вариант либерального подхода к работе</figcaption>
+    <img src="images/mike.jpg" alt="Майк™ Смит">
+    <figcaption>Майк™ Смит — заместитель директора @W3C: вариант либерального подхода к работе</figcaption>
 </figure>
 
 Я не работаю. Я — старосветский _бонвиван_. Я пью чай, изящно отставив мизинец, и трачу силы только на то, что меня забавляет. Последние несколько лет меня забавляло тратить время на работу над программой, помогающей людям проверить, соответствуют ли их документы определённым требованиям в спецификации HTML.
 
 <figure>
-	<a href="http://validator.w3.org/nu/">
-		<img src="images/nu-markup.png" alt="Новая проверка разметки">
-	</a>
-	<figcaption>Новая проверка разметки.</figcaption>
+    <a href="http://validator.w3.org/nu/">
+        <img src="images/nu-markup.png" alt="Новая проверка разметки">
+    </a>
+    <figcaption>Новая проверка разметки.</figcaption>
 </figure>
 
 **Какая разница между DTD и проверкой, основанной на схеме?**
@@ -44,10 +40,10 @@ tags:
 DTD-шки высечены на каменных плитах. И поэтому для обработки они требуют целой кучи камнерезных инструментов. Однако, увы, веб не был построен на обработке каменных плит, поэтому нам пришлось искать другие решения. Для проверки документа на соответствие мы решили использовать такие вещи, как схемы RelaxNG, которые, хоть и не дотягивают до DTD-шной утонченности, представляют собой гораздо более мощные средства для выражения определённых требований соответствия документа. Так что это компромисс.
 
 <figure>
-	<a href="http://validator.w3.org/">
-		<img src="images/w3c-validator.png" alt="Валидатор W3C">
-	</a>
-	<figcaption>Валидатор W3C.</figcaption>
+    <a href="http://validator.w3.org/">
+        <img src="images/w3c-validator.png" alt="Валидатор W3C">
+    </a>
+    <figcaption>Валидатор W3C.</figcaption>
 </figure>
 
 **В чём разница между проверкой на соответствие и валидацией?**
@@ -183,6 +179,6 @@ _Проверка соответствия документа_ — хороши
 **Спасибо, Майк!**
 
 <figure>
-	<iframe width="510" height="383" src="images/https://www.youtube.com/embed/FVbVCZw5BPQ" allowfullscreen></iframe>
-	<figcaption>Полезный совет — всегда <a href="http://validator.w3.org/nu">проверяй свой HTML</a> под <a href="http://youtu.be/FVbVCZw5BPQ">рок-н-ролл</a>, играющий… ГРОМКО!</figcaption>
+    <iframe width="510" height="383" src="images/https://www.youtube.com/embed/FVbVCZw5BPQ" allowfullscreen></iframe>
+    <figcaption>Полезный совет — всегда <a href="http://validator.w3.org/nu">проверяй свой HTML</a> под <a href="http://youtu.be/FVbVCZw5BPQ">рок-н-ролл</a>, играющий… ГРОМКО!</figcaption>
 </figure>

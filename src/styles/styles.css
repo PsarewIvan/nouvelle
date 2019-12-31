@@ -4,13 +4,13 @@
 
 /* Blocks */
 
+@import 'blocks/visually-hidden.css';
 @import 'blocks/page.css';
 @import 'blocks/header.css';
 @import 'blocks/logo.css';
 @import 'blocks/navigation.css';
 @import 'blocks/articles.css';
 @import 'blocks/archive.css';
-@import 'blocks/preview.css';
 @import 'blocks/notice.css';
 @import 'blocks/informer.css';
 @import 'blocks/main.css';
@@ -19,18 +19,24 @@
 @import 'blocks/footer.css';
 @import 'blocks/article.css';
 @import 'blocks/authors.css';
+@import 'blocks/blob.css';
+@import 'blocks/related-articles.css';
+@import 'blocks/article-card.css';
+@import 'blocks/conference-link.css';
 
 /* Globals */
 
 :root {
+    --color-grey-lightest: #e9eaeb;
+    --color-grey-lighter: #b1b3b6;
+    --color-grey-light: #828282;
+    --color-grey-medium: #696969;
     --color-grey-dark: #273238;
     --color-grey-darker: #333333;
-    --color-grey-medium: #696969;
-    --color-grey-light: #828282;
-    --color-grey-lighter: #b1b3b6;
-    --color-grey-lightest: #e9eaeb;
-    --color-blue-medium: #26649f;
-    --color-blue-light: #32adfd;
     --color-blue-lightest: #def3f6;
+    --color-blue-light: #32adfd;
+    --color-blue-medium: #26649f;
+    --color-blue-darker: #0064a4;
     --color-green-light: #ddf2ea;
+    --color-turquoise: #00abbd;
 }

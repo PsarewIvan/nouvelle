@@ -1,28 +1,30 @@
 ---
-title: 'Элементы details и summary'
+title: 'Элементы details и summary'
 date: 2011-08-29
+author: tom-leadbetter
 source:
     title: 'The details and summary elements'
     url: 'https://html5doctor.com/the-details-and-summary-elements/'
-    author: 'Том Лидбеттер'
 translators:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - html
-  - css
-  - a11y
+    - article
+    - html
+    - css
+    - a11y
 ---
 
 Вам часто приходилось использовать JavaScript для создания виджета, показывающего и скрывающего какое-то содержимое? Возможно, для этого вы даже скачивали целую JavaScript-библиотеку? Что ж, можете радоваться: HTML5 позволяет создавать подобное всего лишь парой строчек кода, без применения JavaScript. Зависит от браузера, конечно, но мы вернёмся к этому позже. Представляем вам элемент `<details>`.
 
 Вот что о нём написано [в спецификации](http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-details-element):
 
-> Элемент `details` представляет собой раскрывающийся виджет, показывающий пользователю дополнительную информацию или элементы управления.
->
-> [Спецификация WHATWG HTML5](http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-details-element)
+<blockquote>
+    <p>Элемент <code>&lt;details&gt;</code> представляет собой раскрывающийся виджет, показывающий пользователю дополнительную информацию или элементы управления.</p>
+    <footer>
+        <cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-details-element">Спецификация WHATWG HTML5</a>.</cite>
+    </footer>
+<blockquote>
 
 Мы можем использовать `<details>` для создания «виджетов-аккордеонов», которые пользователь может разворачивать и сворачивать. Внутри этого элемента можно разместить любое содержимое.
 
@@ -34,10 +36,12 @@ tags:
 
 Имеются два элемента: `<details>` и необязательный `<summary>`. Элемент `<details>` — это обёртка для содержимого, которое мы хотим показать и скрыть, а `<summary>` содержит описание и заголовок этой группы. Формально `<summary>` нам не нужен. В его отсутствие браузер подставит текст по умолчанию, например «details» в Chrome. Давайте взглянем на код:
 
-    <details>
-        <summary>Покажи-скрой меня</summary>
-        <p>Бурное развитие внутреннего туризма привело Томаса Кука.</p>
-    </details>
+```html
+<details>
+    <summary>Покажи-скрой меня</summary>
+    <p>Бурное развитие внутреннего туризма привело Томаса Кука.</p>
+</details>
+```
 
 Вы можете [посмотреть это в действии на jsbin](http://jsbin.com/egefop#html,live). Даже этот простой пример прекрасно демонстрирует эффект переключения. Без JavaScript!
 
@@ -45,10 +49,12 @@ tags:
 
 В вышеприведенном примере содержимое скрыто при загрузке страницы. Мы можем сделать его видимым по умолчанию, добавив одиночный атрибут `open` для `<details>`, [пример на jsbin](http://jsbin.com/egefop/2#html,live):
 
-    <details open>
-        <summary>Покажи-скрой меня</summary>
-        <p>Бурное развитие внутреннего туризма привело Томаса Кука.</p>
-    </details>
+```html
+<details open>
+    <summary>Покажи-скрой меня</summary>
+    <p>Бурное развитие внутреннего туризма привело Томаса Кука.</p>
+</details>
+```
 
 Атрибута `closed` не существует. Поэтому, опуская `open`, вы по умолчанию подразумеваете `closed`.
 
@@ -56,10 +62,12 @@ tags:
 
 Мы бегло взглянули на `<summary>` в действии, теперь остановимся на нём подробнее. Внутри `<summary>` могут использоваться строчные элементы, такие как `<span>` или `<strong>`. Для чего это может быть нужно? Например, для дополнительного оформления или, как предлагает спецификация, использования `<label>` для элемента формы. По крайней мере, _было бы_ удобно, если бы [подобная конструкция](http://jsbin.com/egefop/3#html) работала корректно:
 
-    <details>
-        <summary><label for="name">Имя:</label></summary>
-        <input type="text" id="name" name="name" />
-    </details>
+```html
+<details>
+    <summary><label for="name">Имя:</label></summary>
+    <input type="text" id="name" name="name" />
+</details>
+```
 
 Теоретически, нажатие на `<summary>` должно раскрывать содержимое элемента `<details>`. Но в этом примере содержимое не будет развернуто, потому что вы, фактически, взаимодействуете с `<label>`, который переводит фокус на соответствующий `<input>` — даже если он скрыт с помощью `<details>`.
 
@@ -69,19 +77,21 @@ tags:
 
 Вы можете помещать `<details>` друг в друга, если хотите, как это сделано в [следующем, вполне валидном примере](http://jsbin.com/egefop/14#html,live):
 
+```html
+<details>
+    <summary>Вопрос 1</summary>
+    <p>Население превышает широкий кристаллический фундамент.</p>
     <details>
-        <summary>Вопрос 1</summary>
-        <p>Население превышает широкий кристаллический фундамент.</p>
-        <details>
-            <summary>Приложенные документы</summary>
-            <ul>
-                <li><a href="#">Болгары очень дружелюбны;</a></li>
-                <li>Скумбрия неумеренно перевозит вулканизм;</li>
-                <li>Дождливая погода, куда входят Пик-Дистрикт;</li>
-                <li>Белый саксаул дегустирует живописный утконос;</li>
-            </ul>
-        </details>
+        <summary>Приложенные документы</summary>
+        <ul>
+            <li><a href="#">Болгары очень дружелюбны;</a></li>
+            <li>Скумбрия неумеренно перевозит вулканизм;</li>
+            <li>Дождливая погода, куда входят Пик-Дистрикт;</li>
+            <li>Белый саксаул дегустирует живописный утконос;</li>
+        </ul>
     </details>
+</details>
+```
 
 ## Примеры использования
 
@@ -102,37 +112,41 @@ tags:
 
 Как же нам оформить эту штуку? Для элемента, раскрывающего содержимое, в WebKit вы можете использовать псевдо-элемент `::-webkit-details-marker`. [Небольшой пример](http://jsbin.com/egefop/9#html,live):
 
-    details summary::-webkit-details-marker {
-        background: red;
-        color: #fff;
-        font-size: 500%;
-    }
+```css
+details summary::-webkit-details-marker {
+    background: red;
+    color: #fff;
+    font-size: 500%;
+}
+```
 
 Мы также можем позиционировать этот элемент по отношению к родителю. [Здесь, например, он прижат к правому краю](http://jsbin.com/egefop/17#html,live). В общем-то, и все.
 
 А как же заменить раскрывающий элемент своей иконкой? Используя выборку по атрибуту, вы можете определить, когда `<details>` раскрыт, а когда закрыт, и применить соответствующее фоновое изображение. Мы делаем примерно то же самое в [этом примере](http://jsbin.com/egefop/11#html,live), за исключением того, что вместо фонового изображения мы используем псевдо-элемент `:after`:
 
-    summary::-webkit-details-marker {
-        display: none
-    }
+```css
+summary::-webkit-details-marker {
+    display: none
+}
 
-    summary:after {
-        background: red;
-        border-radius: 5px;
-        content: "+";
-        color: #fff;
-        float: left;
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: -5px 10px 0 0;
-        padding: 0;
-        text-align: center;
-        width: 20px;
-    }
+summary:after {
+    background: red;
+    border-radius: 5px;
+    content: "+";
+    color: #fff;
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: -5px 10px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+}
 
-    details[open] summary:after {
-        content: "-";
-    }
+details[open] summary:after {
+    content: "-";
+}
+```
 
 В этом примере символы `+` и `-` используются в качестве раскрывающей ссылки. В зависимости от дизайна вы можете использовать `:before` вместо `:after`, но, в любом случае, оба псевдо-элемента позволяют использование изображения.
 

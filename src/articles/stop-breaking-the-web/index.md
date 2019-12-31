@@ -1,21 +1,19 @@
 ---
 title: 'Хватит разрушать веб'
 date: 2015-03-23
+author: nicolas-bevacqua
 source:
     title: 'Stop breaking the Web'
     url: 'http://ponyfoo.com/articles/stop-breaking-the-web'
-    author: 'Николас Беваква'
 translators:
-  - name: 'Ольга Алексашенко'
-    url: 'https://moikrug.ru/engel-t'
+    - olga-aleksashenko
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - js
-  - performance
+    - article
+    - js
+    - performance
 ---
 
 2014 год. Ниндзя-рок-звезды веба идут против забытой ныне техники [прогрессивного улучшения](http://alistapart.com/article/understandingprogressiveenhancement). Они отказываются от истоков веба и всего того, за что они когда-то стояли. В этой статье я собираюсь громко заявить о том, как **мы разрушаем веб**; о не всегда явных причинах, почему мы должны перестать это делать, и отчего _хорошей идеей будет это прекратить_.
@@ -25,8 +23,8 @@ tags:
 Скриншот ниже — всего лишь рекламный трюк: попытка захватить технический медиа-мир врасплох. Но тот факт, что _мы не уверены_, трюк это или решение всерьёз, заставляет меня сжиматься от страха за будущее веба.
 
 <figure>
-	<img src="images/tacobell.jpg" alt="Реклама Taco Bell.">
-	<figcaption>Taco Bell <em>#onlyintheapp</em> — действительно ли это <strong>ловкий рекламный трюк, чтобы спровоцировать загрузку приложения, или это симптом того, что веб истекает кровью?</strong></figcaption>
+    <img src="images/tacobell.jpg" alt="Реклама Taco Bell.">
+    <figcaption>Taco Bell <em>#onlyintheapp</em> — действительно ли это <strong>ловкий рекламный трюк, чтобы спровоцировать загрузку приложения, или это симптом того, что веб истекает кровью?</strong></figcaption>
 </figure>
 
 _Оговорка: эта статья — **не брюзжание об Angular 2.0**. Мысли, озвученные в ней, начали зарождаться у меня давно, до появления Angular 2.0. Так случилось, что объявление планов развития Angular совпало с публикацией этой статьи. И хотя эти новости больше подкрепляют [точку зрения его противников](https://medium.com/este-js-framework/whats-wrong-with-angular-js-97b0a787f903), утверждения, стоящие за этой статьей, являются чем-то большим, чем просто критика изменений в публичном API Angular._

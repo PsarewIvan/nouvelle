@@ -1,25 +1,20 @@
 ---
-title: 'CSS и JS в состоянии войны: как это остановить'
+title: 'CSS и JS в состоянии войны: как это остановить'
 date: 2019-02-04
+author: andrey-sitnik
 source:
     title: 'CSS and JS are at war, here’s how to stop it'
     url: 'https://dev.to/evilmartians/css-and-js-are-at-war-heres-how-to-stop-it-158a'
-    author: 'Андрей Ситник'
 translators:
-  - name: 'Алёна Батицкая'
-    url: 'https://medium.com/@ABatickaya'
+    - alena-batickaya
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
-  - css
-  - js
+    - article
+    - css
+    - js
 ---
-
-![](images/1.gif)
-_[ESPN — Saber Combat](https://dribbble.com/shots/5310012-ESPN-Saber-Combat)_
 
 **Резюмируя**: множество людей любят и JS и UX, CSS и т.д. Если мы перестанем раздавать ярлыки типа «JS-разработчик» или «UX-разработчик», то сможем добиться перемирия в текущей войне «JS против CSS».
 

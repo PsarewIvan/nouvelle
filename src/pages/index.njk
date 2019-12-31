@@ -1,0 +1,33 @@
+---
+title: Веб-стандарты
+layout: page.njk
+permalink: index.html
+---
+
+{% include 'header.njk' %}
+
+<main class="main">
+    {{ content | safe }}
+
+    {% set articleType %}{{ '--main' }}{% endset %}
+
+    <ul class="articles articles{{ articleType }}">
+        {%- for article in collections.article | reverse | filterIndexArticles -%}
+            <li class="
+                articles__item
+                articles__item{{ articleType }}
+                {% if article.data.featured == true %}
+                    articles__item--featured
+                {% endif %}">
+                {% include 'article-card.njk' %}
+            </li>
+        {%- endfor -%}
+    </ul>
+
+    <p class="notice">
+        <a class="notice__link" href="/articles/">Все статьи</a>
+    </p>
+</main>
+
+{% include 'aside.njk' %}
+{% include 'footer.njk' %}

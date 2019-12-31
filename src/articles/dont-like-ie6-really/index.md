@@ -1,16 +1,15 @@
 ---
-title: 'Вам не нравится IE6? Что, правда?'
+title: 'Вам не нравится IE6? Что, правда?'
 date: 2011-08-02
+author: remy-sharp
 source:
     title: 'What do you mean, you don’t like IE6? Really?'
     url: 'http://remy.tumblr.com/post/8334086394/what-do-you-mean-you-dont-like-ie6-really'
-    author: 'Реми Шарп'
 translators:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags:
-  - article
+    - article
 ---
 
 Сегодня прочёл очередное высказывание на тему _Почему я не поддерживаю IE6_ из длинного-предлинного списка ему подобных. Что за бред? Если поддержка IE6 является частью вашей работы или включена в договор — значит так оно и есть, такова профессия, и в этих сложностях её смысл.

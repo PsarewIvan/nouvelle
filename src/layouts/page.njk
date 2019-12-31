@@ -9,8 +9,53 @@
     </title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
-<body class="page__body">
-    {{ content | safe }}
+<body class="page__body{% if page.url != '/' %} page__body--inner{% endif %}">
+    {% include '../images/blob.svg' %}
+    <div class="page__navigation{% if page.url != '/' %} page__navigation--inner{% endif %} navigation">
+        <div class="navigation__logo logo">
+            {% if page.url != '/' %}<a class="logo__link" href="/">{% endif %}
+                <img class="logo__icon" src="/images/logo.svg" width="40" height="40" alt="Логотип Веб-стандартов">
+                <p class="logo__title">
+                    Веб-стандарты
+                </p>
+                <p class="logo__tagline">
+                    Сообщество разработчиков
+                </p>
+            {% if page.url != '/' %}</a>{% endif %}
+        </div>
+        <nav class="navigation__bar">
+            <button class="navigation__button"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+                aria-controls="navigation-menu"
+                type="button">
+                <span class="navigation__inner"></span>
+            </button>
+            <ul class="navigation__menu" id="navigation-menu">
+                <li class="navigation__item">
+                    <a class="navigation__link {% if page.url == '/articles/' %}navigation__link--active{% endif %}" href="/articles/">Статьи</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link">Конференция</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link">Календарь</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link">Подкаст</a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link">О проекте</a>
+                </li>
+                <li class="navigation__item navigation__item--patreon">
+                    <a class="navigation__link navigation__link--patreon" href="https://www.patreon.com/webstandards_ru">Поддержать проект</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="page__content{% if page.url != '/' %} page__content--inner{% endif %}">
+        {{ content | safe }}
+    </div>
     <script src="/scripts/navigation.js"></script>
 </body>
 </html>

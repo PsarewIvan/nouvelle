@@ -1,24 +1,41 @@
 {
   "private": true,
   "scripts": {
-    "start": "npx eleventy --serve --quiet",
-    "build": "npx eleventy --quiet",
-    "test": "stylelint 'src/styles/**/*.css' && remark src/articles/**/*.md"
+    "start": "eleventy --serve --quiet",
+    "build": "eleventy --quiet",
+    "editorconfig": "editorconfig-checker",
+    "css": "stylelint 'src/styles/**/*.css'",
+    "markdown": "remark 'src/articles/**/*.md' --quiet",
+    "html": "node-w3c-validator -i ./dist/**/*.html --exclude ./dist/**/demos/** -f lint -evH",
+    "test": "npm run css && npm run markdown"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "editorconfig-checker": "^3.0.3",
+    "node-w3c-validator": "^1.6.0",
     "pretty-data": "^0.40.0",
     "remark-cli": "^7.0.0",
+    "remark-frontmatter": "^1.3.2",
     "remark-lint": "^6.0.5",
+    "remark-lint-code-block-style": "^1.0.3",
     "remark-lint-emphasis-marker": "^1.0.3",
+    "remark-lint-ordered-list-marker-value": "^1.0.4",
     "remark-lint-strong-marker": "^1.0.3",
-    "stylelint": "^11.0.0"
+    "remark-lint-unordered-list-marker-style": "^1.0.3",
+    "stylelint": "^12.0.0"
   },
   "browserslist": [
     "last 2 version",
     "not dead",
     "not ie <= 11"
   ],
+  "nodeW3Cvalidator": {
+    "suppressErrors": [
+      "Bad value  for attribute “href” on element “a”: Illegal character in fragment: “#” is not allowed.",
+      "Bad value “soft-light” for attribute “mode” on element “feBlend”.",
+      "Element “style” not allowed as child of element “div” in this context."
+    ]
+  },
   "stylelint": {
     "rules": {
       "color-no-invalid-hex": true,
@@ -79,6 +96,10 @@
       "declaration-block-semicolon-space-after": "always-single-line",
       "declaration-block-semicolon-space-before": "never",
       "declaration-block-trailing-semicolon": "always",
+      "declaration-empty-line-before": "never",
+      "declaration-property-unit-whitelist": {
+        "line-height": []
+      },
       "block-closing-brace-empty-line-before": "never",
       "block-closing-brace-newline-after": "always-multi-line",
       "block-closing-brace-newline-before": "always-multi-line",
@@ -149,12 +170,30 @@
   "remarkConfig": {
     "settings": {
       "emphasis": "_",
-      "strong": "**"
+      "strong": "**",
+      "bullet": "-",
+      "incrementListMarker": "true"
     },
     "plugins": [
-      "remark-lint-emphasis-marker",
-      "remark-lint-strong-marker"
+      "remark-frontmatter",
+      [
+        "remark-lint-emphasis-marker"
+      ],
+      [
+        "remark-lint-strong-marker"
+      ],
+      [
+        "remark-lint-unordered-list-marker-style",
+        "-"
+      ],
+      [
+        "remark-lint-ordered-list-marker-value",
+        "ordered"
+      ],
+      [
+        "remark-lint-code-block-style",
+        "fenced"
+      ]
     ]
   }
-
 }

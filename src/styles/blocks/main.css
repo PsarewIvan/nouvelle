@@ -2,10 +2,21 @@
 
 .main {
     padding: 64px 8px 37px;
+    background-color: white;
+}
+
+.main__conference-link {
+    margin-top: 40px;
 }
 
 @media (min-width: 1024px) {
     .main {
         padding: 100px 64px;
+    }
+}
+
+@media (min-width: 1250px) {
+    .main__conference-link {
+        margin-top: 60px;
     }
 }

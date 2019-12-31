@@ -1,44 +1,42 @@
 ---
 title: 'Извлекаем критический CSS'
 date: 2019-10-08
+author: milica-mihajlija
 source:
     title: 'Extract critical CSS'
     url: 'https://web.dev/extract-critical-css'
-    author: 'Милица Михайлия'
 translators:
-  - name: 'Алёна Батицкая'
-    url: 'https://medium.com/@ABatickaya'
+    - alena-batickaya
 editors:
-  - name: 'Вадим Макеев'
-    url: 'https://twitter.com/pepelsbey'
+    - vadim-makeev
 layout: article.njk
 tags: article
 ---
-
-![](images/buffering.png)
-
-[Картинка Ивана Гриззла с Dribble](https://dribbble.com/shots/3510389-Critical-video-considerations-for-brands)
 
 Браузер должен скачать и распарсить CSS-файл перед тем, как отрисует страницу. Это делает CSS ресурсом, блокирующим рендеринг. Если файл большой или соединение медленное, то запрос стилей может значительно увеличить время отрисовки страницы.
 
 **Ключевой термин**: критический CSS — это метод, который извлекает CSS для контента «над сгибом» _(above the fold — термин из газетного дизайна, прим. редактора)_, чтобы максимально быстро показать его пользователю.
 
-![Над сгибом и под сгибом.](images/above-the-fold.png)
-_Над сгибом и под сгибом._
+<figure>
+    <img src="images/above-the-fold.png" alt="Над сгибом и под сгибом.">
+    <figcaption>
+        Над сгибом и под сгибом.
+    </figcaption>
+</figure>
 
 Над сгибом — это то, что пользователь видит в первую очередь при загрузке страницы, до прокрутки. Не существует универсального способа определить, где заканчивается экран пользователя и что находится в первом экране, поскольку существует огромное количество устройств с разными размерами экрана.
 
 Критический CSS можно заинлайнить внутри `<head>` прямо в HTML-документе. Это позволит избежать дополнительного запроса к серверу для получения этих стилей. Остальной CSS может быть загружен асинхронно.
 
-![](images/inline-critical-css.png)
+<img src="images/inline-critical-css.png" alt="">
 
 Увеличение времени рендеринга может существенно повлиять на [воспринимаемую производительность](https://developers.google.com/web/fundamentals/performance/rail#ux), особенно при плохом соединении. В мобильных сетях высокая задержка является проблемой независимо от пропускной способности.
 
-![](images/mobile-bandwith-delay.png)
+<img src="images/mobile-bandwith-delay.png" alt="">
 
 Если у вас плохой [First Contentful Paint](https://web.dev/first-contentful-paint/) (FCP) и вы видите рекомендацию «Устранить ресурсы, блокирующие рендеринг» в отчёте Lighthouse, то стоит попробовать методику критического CSS.
 
-![](images/render-blocking-example.png)
+<img src="images/render-blocking-example.png" alt="">
 
 ### **Подводные камни!**
 
