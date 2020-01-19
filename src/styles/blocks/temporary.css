@@ -1,0 +1,25 @@
+.page__body {
+    position: relative;
+    height: auto;
+}
+
+.temporary-wrapper {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 63, 255, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 63, 255, 0.6) 1px, transparent 1px),
+        linear-gradient(rgba(0, 63, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 63, 255, 0.3) 1px, transparent 1px);
+    background-size:
+        64px 64px,
+        64px 64px,
+        8px 8px,
+        8px 8px;
+    background-position:
+        -1px 0,
+        0 -1px;
+    z-index: 100;
+}
