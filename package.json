@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
     "editorconfig-checker": "^3.0.3",
     "node-w3c-validator": "^1.6.0",
     "pretty-data": "^0.40.0",

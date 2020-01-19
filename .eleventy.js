@@ -1,8 +1,10 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(config) {
     config.addPassthroughCopy('src/favicon.ico');
     config.addPassthroughCopy('src/fonts');
     config.addPassthroughCopy('src/styles');
     config.addPassthroughCopy('src/scripts');
+    config.addPlugin(pluginRss);
 
     config.addCollection('tagList', (collection) => {
         const set = new Set();
