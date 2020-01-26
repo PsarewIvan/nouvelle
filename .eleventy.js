@@ -35,6 +35,12 @@ module.exports = function(config) {
         return [featured, ...notFeatured];
     });
 
+    config.addFilter('filterLastArticles', (array) => {
+        let lastElement = [];
+        lastElement.push(array[array.length - 1]);
+        return lastElement;
+    });
+
     config.addFilter('filterArticles', (array) => {
         return array.filter(post =>
             post.inputPath.startsWith('./src/articles/')
