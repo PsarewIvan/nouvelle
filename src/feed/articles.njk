@@ -1,0 +1,38 @@
+---
+permalink: articles/feed/index.xml
+metadata:
+    title: Новости — Веб-стандарты
+    description: Свежие новости Веб-стандартов
+    language: ru
+    url: https://web-standards.ru/articles
+    feed:
+        url: https://web-standards.ru/articles/feed/index.xml
+        id: https://web-standards.ru/articles
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>{{ metadata.title }}</title>
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language }}</language>
+    <link href="{{ metadata.feed.url }}" rel="self"/>
+    <link href="{{ metadata.url }}"/>
+    <id>{{ metadata.feed.id }}</id>
+
+    {%- for article in collections.article | filterLastArticles -%}
+        <updated>{{ article.date.toUTCString() }}</updated>
+    {%- endfor -%}
+
+    {%- for article in collections.article | reverse | filterIndexArticles %}
+
+        <entry>
+            <title>{{ article.data.title }}</title>
+            <link href="{{ article.url }}.index.html"/>
+            <updated>{{ article.date.toUTCString() }}</updated>
+            <id>{{ article.url }}</id>
+            <content type="html">{{ article.templateContent }}</content>
+        </entry>
+
+    {%- endfor %}
+
+</feed>
