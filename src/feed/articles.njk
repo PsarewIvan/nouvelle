@@ -27,7 +27,7 @@ metadata:
 
         <entry>
             <title>{{ article.data.title }}</title>
-            <link href="{{ article.url }}.index.html"/>
+            <link href="{{ article.url | url }}index.html"/>
             <updated>{{ article.date.toUTCString() }}</updated>
             <id>{{ article.url }}</id>
             <content type="html">{{ article.templateContent }}</content>

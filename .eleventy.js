@@ -165,6 +165,7 @@ module.exports = function(config) {
             includes: 'includes',
             layouts: 'layouts',
         },
+        pathPrefix: "/https://web-standards.ru/",
         dataTemplateEngine: 'njk',
         markdownTemplateEngine: false,
         htmlTemplateEngine: 'njk',
