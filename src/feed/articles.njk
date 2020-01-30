@@ -1,18 +1,17 @@
 ---
+title: Веб-стандарты — Статьи
+description: Авторские и переводные статьи по фронтенду
+language: ru
+url: https://web-standards.ru/articles
 permalink: articles/feed/index.xml
-metadata:
-    title: Новости — Веб-стандарты
-    description: Свежие новости Веб-стандартов
-    language: ru
-    url: https://web-standards.ru/articles
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
     <channel>
-        <title>{{ metadata.title }}</title>
-        <link href="{{ metadata.url }}"/>
-        <description>{{ metadata.description }}</description>
-        <language>{{ metadata.language }}</language>
+        <title>{{ title }}</title>
+        <description>{{ description }}</description>
+        <language>{{ language }}</language>
+        <link>{{ url }}</link>
 
         {%- for article in collections.article | filterLastArticles -%}
             <lastBuildDate>{{ article.date.toUTCString() }}</lastBuildDate>
