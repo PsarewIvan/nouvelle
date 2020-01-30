@@ -5,34 +5,32 @@ metadata:
     description: Свежие новости Веб-стандартов
     language: ru
     url: https://web-standards.ru/articles
-    feed:
-        url: https://web-standards.ru/articles/feed/index.xml
-        id: https://web-standards.ru/articles
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ metadata.title }}</title>
+        <link href="{{ metadata.url }}"/>
+        <description>{{ metadata.description }}</description>
+        <language>{{ metadata.language }}</language>
 
-    <title>{{ metadata.title }}</title>
-    <description>{{ metadata.description }}</description>
-    <language>{{ metadata.language }}</language>
-    <link href="{{ metadata.feed.url }}" rel="self"/>
-    <link href="{{ metadata.url }}"/>
-    <id>{{ metadata.feed.id }}</id>
+        {%- for article in collections.article | filterLastArticles -%}
+            <lastBuildDate>{{ article.date.toUTCString() }}</lastBuildDate>
+        {%- endfor -%}
 
-    {%- for article in collections.article | filterLastArticles -%}
-        <updated>{{ article.date.toUTCString() }}</updated>
-    {%- endfor -%}
+        {%- for article in collections.article | reverse %}
+            <item>
+                <title>{{ article.data.title }}</title>
+                <link href="{{ article.url | url }}"/>
+                <description>
+                    <![CDATA[
+                        {{ article.templateContent | safe }}
+                    ]]>
+                </description>
+                <pubDate>{{ article.date.toUTCString() }}</pubDate>
+                <guid>{{ article.url | url }}</guid>
+            </item>
+        {%- endfor %}
 
-    {%- for article in collections.article | reverse | filterIndexArticles %}
-
-        <entry>
-            <title>{{ article.data.title }}</title>
-            <link href="{{ article.url | url }}index.html"/>
-            <updated>{{ article.date.toUTCString() }}</updated>
-            <id>{{ article.url }}</id>
-            <content type="html">{{ article.templateContent }}</content>
-        </entry>
-
-    {%- endfor %}
-
-</feed>
+    </channel>
+</rss>
