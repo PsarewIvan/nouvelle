@@ -24,7 +24,7 @@ permalink: articles/feed/index.xml
                 <link href="{{ domain }}{{ article.url }}"/>
                 <description>
                     <![CDATA[
-                        {{ article.templateContent | safe }}
+                        {{ article.templateContent | fixLinks | safe }}
                     ]]>
                 </description>
                 <pubDate>{{ article.date.toUTCString() }}</pubDate>

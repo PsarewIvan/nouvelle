@@ -118,6 +118,19 @@ module.exports = function(config) {
             });
     });
 
+    config.addFilter('fixLinks', (content) => {
+        const reg = /(src="[^(https:\/\/)])|(src="\/)|(href="[^(https:\/\/)])|(href="\/)/g;
+        const prefix = `https://web-standards.ru/articles/`; // после articles/ нужно добавлять название статьи
+        return content.replace(reg, (match) => {
+            if (match === `src="/` || match === `href="/`) {
+                match = match.slice(0, -1);
+                return match + prefix;
+            } else {
+                return match.slice(0, -1) + prefix + match.slice(-1);
+            }
+        });
+    });
+
     config.addNunjucksTag('blob', (nunjucksEngine) => {
         return new function () {
             this.tags = ['blob'];
@@ -165,7 +178,7 @@ module.exports = function(config) {
             includes: 'includes',
             layouts: 'layouts',
         },
-        pathPrefix: "/https://web-standards.ru/",
+        // pathPrefix: "/https://web-standards.ru/",
         dataTemplateEngine: 'njk',
         markdownTemplateEngine: false,
         htmlTemplateEngine: 'njk',
