@@ -120,8 +120,8 @@ module.exports = function(config) {
 
     config.addFilter('fixLinks', (content) => {
         const reg = /(src="[^(https:\/\/)])|(src="\/)|(href="[^(https:\/\/)])|(href="\/)/g;
-        const prefix = `https://web-standards.ru/articles/`; // после articles/ нужно добавлять название статьи
-        return content.replace(reg, (match) => {
+        const prefix = `https://web-standards.ru` + content.url;
+        return content.templateContent.replace(reg, (match) => {
             if (match === `src="/` || match === `href="/`) {
                 match = match.slice(0, -1);
                 return match + prefix;
