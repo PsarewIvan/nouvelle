@@ -8,12 +8,12 @@ permalink: /articles/tags/
 
 <main class="main">
     {{ content | safe }}
-    <h1>Теги</h1>
-    <ul>
+    <h1 class="tags__header">Теги</h1>
+    <ul class="tags__list">
         {% for tag in collections.tagList | filterArticleTag %}
-            <li>
-                <h2>
-                    <a href="/articles/tags/{{ tag | slug }}">{{ tag }}</a>
+            <li class="tags__item">
+                <h2 class="tags__tag">
+                    <a class="tags__tag-link" href="/articles/tags/{{ tag | slug }}">{{ tag }}</a>
                 </h2>
             </li>
         {% endfor %}
