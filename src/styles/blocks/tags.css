@@ -24,21 +24,23 @@
 .tags__tag-link {
     display: inline-block;
     padding: 0 10px;
-    border: 1px solid var(--color-grey-lighter);
-    border-radius: 10px;
-    background-color: var(--color-grey-lightest);
     font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
-    color: black;
-    text-decoration: none;
+    letter-spacing: 0.02em;
+    color: var(--color-cpecial-dark);
 }
 
-.tags__tag-link:hover,
-.tags__tag-link:focus {
-    border-color: var(--color-blue-medium);
-    background-color: var(--color-blue-light);
-    color: white;
+.tags__tag-link:hover:not(.tags__tag-link--active),
+.tags__tag-link:focus:not(.tags__tag-link--active) {
+    color: var(--color-special-neutral);
+}
+
+.tags__tag-link--active {
+    font-family: 'Dewi Expanded';
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
 }
 
 @media (min-width: 630px) {
