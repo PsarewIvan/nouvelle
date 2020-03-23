@@ -27,7 +27,9 @@ permalink: /articles/tags/{{ tag | slug }}/
                         {% if tag == tags %}
                             tags__tag-link--active
                         {% endif %}"
-                        href="/articles/tags/{{ tags | slug }}">
+                        {% if tag != tags %}
+                            href="/articles/tags/{{ tags | slug }}"
+                        {% endif %}>
                         {{ tags }}
                     </a>
                 </h2>
