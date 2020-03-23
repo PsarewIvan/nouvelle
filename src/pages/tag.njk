@@ -17,6 +17,24 @@ permalink: /articles/tags/{{ tag | slug }}/
 {% include 'header.njk' %}
 
 <main class="main">
+    <h1 class="tags__header">Теги</h1>
+    <ul class="tags__list">
+        {% for tags in collections.tagList | filterArticleTag %}
+            <li class="tags__item">
+                <h2 class="tags__tag">
+                    <a class="
+                        tags__tag-link
+                        {% if tag == tags %}
+                            tags__tag-link--active
+                        {% endif %}"
+                        href="/articles/tags/{{ tags | slug }}">
+                        {{ tags }}
+                    </a>
+                </h2>
+            </li>
+        {% endfor %}
+    </ul>
+
     {% set taglist = collections[tag] %}
     <h1>Статьи с тегом «{{ tag }}» ({{ taglist | length }})</h1>
     <ol>
