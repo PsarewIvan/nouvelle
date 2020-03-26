@@ -21,18 +21,16 @@ permalink: /articles/tags/{{ tag | slug }}/
     <ul class="tags__list">
         {% for tags in collections.tagList | filterArticleTag %}
             <li class="tags__item">
-                <h2 class="tags__tag">
-                    <a class="
-                        tags__tag-link
-                        {% if tag == tags %}
-                            tags__tag-link--active
-                        {% endif %}"
-                        {% if tag != tags %}
-                            href="/articles/tags/{{ tags | slug }}"
-                        {% endif %}>
-                        {{ tags }}
-                    </a>
-                </h2>
+                <a class="
+                    tags__tag-link
+                    {% if tag == tags %}
+                        tags__tag-link--active
+                    {% endif %}"
+                    {% if tag != tags %}
+                        href="/articles/tags/{{ tags | slug }}"
+                    {% endif %}>
+                    {{ tags }}
+                </a>
             </li>
         {% endfor %}
     </ul>
