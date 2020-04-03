@@ -23,7 +23,7 @@
     line-height: 1.5;
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--color-cpecial-dark);
+    color: var(--color-special-dark);
 }
 
 .tags__tag-link[href]:hover,
