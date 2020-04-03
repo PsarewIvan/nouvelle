@@ -27,12 +27,12 @@
     color: var(--color-cpecial-dark);
 }
 
-.tags__tag-link:hover:not(.tags__tag-link--active),
-.tags__tag-link:focus:not(.tags__tag-link--active) {
+.tags__tag-link[href]:hover,
+.tags__tag-link[href]:focus {
     color: var(--color-special-neutral);
 }
 
-.tags__tag-link--active {
+.tags__tag-link:not([href]) {
     font-family: 'Dewi Expanded';
     font-weight: 900;
     color: black;

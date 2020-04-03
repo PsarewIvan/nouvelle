@@ -22,10 +22,7 @@ permalink: /articles/tags/{{ tag | slug }}/
         {% for tags in collections.tagList | filterArticleTag %}
             <li class="tags__item">
                 <a class="
-                    tags__tag-link
-                    {% if tag == tags %}
-                        tags__tag-link--active
-                    {% endif %}"
+                    tags__tag-link"
                     {% if tag != tags %}
                         href="/articles/tags/{{ tags | slug }}"
                     {% endif %}>
